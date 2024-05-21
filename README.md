@@ -1,4 +1,2 @@
 ﻿# repositorio
-# NUEVO
-# NUEVO
-# NUEVO
+
