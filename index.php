@@ -14,7 +14,7 @@
     <div class="contenedor-header">
         <header>
             <div class="logo">
-                <a href="#" class="neon-text">Alexander</a>
+                <a href="login.php" class="neon-text">Alexander</a>
             </div>
             <nav id="nav" class="">
                 <ul>
