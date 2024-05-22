@@ -11,7 +11,8 @@
         <div class="image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <input type="hidden" id="usu_id" value="<?php echo $_SESSION["idusuarios"] ?>">
+          <a href="#" class="d-block"> <?php echo $_SESSION["usu_nom"]?></a>
         </div>
       </div>
 
@@ -22,13 +23,13 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+            with font-awesome or any other icon font library -->
         
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Widgets
+                Inicio
                 
               </p>
             </a>
@@ -37,7 +38,7 @@
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Widgets
+                Informacion
                 
               </p>
             </a>
@@ -46,7 +47,7 @@
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Widgets
+                Experiencia
                 
               </p>
             </a>
@@ -55,7 +56,34 @@
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Widgets
+                Menu
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Social Media
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Trabajos
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?php BASE_URL;?>logout.php" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Salir
                 
               </p>
             </a>

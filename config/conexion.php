@@ -1,10 +1,10 @@
 <?php 
-session_start ();
+session_start();
 class Conectar{
     protected $dbh;
     protected function Conexion(){
         try{
-            $conectar = $this->dbh = new PDO ("mysql:local=localhost;dbname=proyecto","root","");
+            $conectar = $this->dbh=new PDO("mysql:local=localhost;dbname=proyecto","root","");
             return $conectar;
         } catch(Exception $e) {
             print "¡Error BD!: " . $e->getMessage() . "<br/>";
@@ -16,7 +16,7 @@ class Conectar{
     }
     public static function ruta(){
         //QA
-        return "http://localhost/thiago";
+        return "http://localhost/Thiago/";
     }
 }
 

@@ -1,13 +1,12 @@
 <?php 
-require_once("config/conexion.php");
+  require_once("config/conexion.php");
 
-if(isset($_POST["enviar"]) and $_POST["enviar"]=="si"){
-  require_once("models/Usuario.php");
-  $usuario = new Usuario();
-  $usuario ->login();
-}
+  if(isset($_POST["enviar"]) and $_POST["enviar"]=="si"){
+    require_once("model/Usuario.php");
+    $usuario = new Usuario();
+    $usuario->login();
+  }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +20,7 @@ if(isset($_POST["enviar"]) and $_POST["enviar"]=="si"){
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <a href="#"><b>Admin</b>LTE</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -30,42 +29,6 @@ if(isset($_POST["enviar"]) and $_POST["enviar"]=="si"){
 
       <form action="" method="post">
       
-      <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
-
-    </div>  
-      <!-- /.verifica pendiente -->
-
       <?php 
       
       if(isset($_GET["m"])){
@@ -86,8 +49,47 @@ if(isset($_POST["enviar"]) and $_POST["enviar"]=="si"){
           break;
 
           ?>
-       <?php 
+      <?php 
           
         }
       }
       ?>
+      
+      <div class="input-group mb-3">
+          <input type="email" name="usu_correo" id="usu_correo" class="form-control" placeholder="Email">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" name="usu_pass" id="usu_pass"class="form-control" placeholder="Password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember">
+              <label for="remember">
+                Remember Me
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <input type="hidden" name="enviar" class="form-control" value="si">
+            <button type="submit" class="btn btn-primary btn-block">Acceder</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+    </div>  
+      <!-- /.verifica pendiente -->
+
+      

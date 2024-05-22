@@ -1,3 +1,6 @@
+
+  
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,22 +11,22 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="public/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../public/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="public/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../public/dist/css/adminlte.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="../public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed" data-panel-auto-height-mode="height">
 <div class="wrapper">
   <section class="content">
 <div class="error-page">
-<h2 class="headline text-warning"> 404</h2>
+<h2 class="headline text-warning">404</h2>
 <div class="error-content">
 <h3><i class="fas fa-exclamation-triangle text-warning"></i> Oops! Pagina no encontrada.</h3>
 <p>
 
-Regresar <a href="login.php">al login</a>
+Regresar <a href="../login.php">al login</a>
 </p>
 </div>
 </div>
@@ -58,19 +61,19 @@ Regresar <a href="login.php">al login</a>
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="../plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- overlayScrollbars -->
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
+<script src="../dist/js/adminlte.js"></script>
 
 </body>
 </html>
