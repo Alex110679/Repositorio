@@ -47,7 +47,7 @@ class Trabajos_realizados extends Conectar{
             work_descripcion=?,
             work_fecha=?,
             work_rol=?,
-            work_tecnologia
+            work_tecnologia=?
             
             WHERE 
                 idtrabajos_realizados=?";       

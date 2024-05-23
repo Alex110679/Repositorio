@@ -37,7 +37,7 @@ class Menu extends Conectar{
         $sql="UPDATE menu
             SET 
             opcion=?,
-            url=?
+            url=? 
 
             WHERE 
                 idmenu=?";       

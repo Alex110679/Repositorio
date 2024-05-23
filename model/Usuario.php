@@ -28,6 +28,7 @@
                         header("Location:".Conectar::ruta()."login.php?m=1");
                         exit();
                     }
+                    
                         
                     
 
