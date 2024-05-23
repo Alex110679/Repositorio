@@ -9,20 +9,21 @@ class Estudios extends Conectar{
         return $resultado=$sql->fetchAll();
     }
     
-    /*public function get_estudios_con_parametros($idinformacion_personal){
+    public function get_estudiosXid($idestudios){
         $social=parent::conexion();
         parent::set_names();
         $sql="SELECT * FROM estudios WHERE idestudios=?";
         $sql=$social->prepare($sql);
+        $sql->bindValue(1,$idestudios);
         $sql->execute();
         return $resultado=$sql->fetchAll();
-    }*/
+    }
     
 
     public function insert_estudios($est_titulo,$est_lugar,$est_anno,$est_tipo){
         $social=parent::conexion();
         parent::set_names();
-        $sql="INSERT INTO estudios (idestudios,est_titulo,est_lugar,est_anno,est_tipo) VALUES(NULL,?,?,?,?,1)";
+        $sql="INSERT INTO estudios (idestudios,est_titulo,est_lugar,est_anno,est_tipo,est) VALUES(NULL,?,?,?,?,1)";
         $sql=$social->prepare($sql);
         $sql->bindValue(1,$est_titulo);
         $sql->bindValue(2,$est_lugar);
@@ -50,7 +51,7 @@ class Estudios extends Conectar{
         $sql->bindValue(2,$est_lugar);
         $sql->bindValue(3,$est_anno);
         $sql->bindValue(4,$est_tipo);
-        $sql->bindValue(7,$idestudios);
+        $sql->bindValue(5,$idestudios);
 
         $sql->execute();
         return $resultado=$sql->fetchAll();

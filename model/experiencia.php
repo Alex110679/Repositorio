@@ -9,20 +9,21 @@ class Experiencia extends Conectar{
         return $resultado=$sql->fetchAll();
     }
     
-    /*public function get_experiencia_con_parametros($idexperiencia){
+    public function get_experienciaXid($idexperiencia){
         $social=parent::conexion();
         parent::set_names();
         $sql="SELECT * FROM experiencia WHERE idexperiencia=?";
         $sql=$social->prepare($sql);
+        $sql->bindValue(1,$idexperiencia);
         $sql->execute();
         return $resultado=$sql->fetchAll();
-    }*/
+    }
     
 
     public function insert_experiencia($exp_titulo,$exp_lugar,$exp_annoIni,$exp_annoFin,$exp_tipo){
         $social=parent::conexion();
         parent::set_names();
-        $sql="INSERT INTO experiencia (idexperiencia,exp_lugar,exp_annoIni,exp_annoFin,exp_tipo,est) VALUES(NULL,?,?,?,?,?,1)";
+        $sql="INSERT INTO experiencia (idexperiencia,exp_titulo,exp_lugar,exp_annoIni,exp_annoFin,exp_tipo,est) VALUES(NULL,?,?,?,?,?,1)";
         $sql=$social->prepare($sql);
         $sql->bindValue(1,$exp_titulo);
         $sql->bindValue(2,$exp_lugar);
@@ -38,6 +39,7 @@ class Experiencia extends Conectar{
         parent::set_names();
         $sql="UPDATE experiencia
             SET 
+                exp_titulo=?,
                 exp_lugar=?,
                 exp_annoIni=?,
                 exp_annoFin=?,

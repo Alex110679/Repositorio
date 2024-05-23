@@ -9,14 +9,15 @@ class SocialMedia extends Conectar{
         return $resultado=$sql->fetchAll();
     }
     
-    /*public function get_socialMedia_con_parametros($idsocial_media){
+    public function get_socialMediaXid($idsocial_media){
         $social=parent::conexion();
         parent::set_names();
         $sql="SELECT * FROM social_media WHERE idsocial_media=?";
         $sql=$social->prepare($sql);
+        $sql->bindValue(1,$idsocial_media);
         $sql->execute();
         return $resultado=$sql->fetchAll();
-    }*/
+    }
     
 
     public function insert_socialMedia($socmed_icono,$socmed_url){
@@ -48,12 +49,12 @@ class SocialMedia extends Conectar{
         return $resultado=$sql->fetchAll();
     }
 
-    public function delete_socialMedia($socmed_id){
+    public function delete_socialMedia($idsocial_media){
         $social=parent::conexion();
         parent::set_names();
         $sql="UPDATE social_media SET est=0 WHERE idsocial_media=?";
         $sql=$social->prepare($sql);
-        $sql->bindValue(1,$socmed_id);
+        $sql->bindValue(1,$idsocial_media);
         $sql->execute();
         return $resultado=$sql->fetchAll(); 
     }
