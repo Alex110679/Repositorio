@@ -23,10 +23,19 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
-            with font-awesome or any other icon font library -->
+            with font-awesome or any other icon font library 
         
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="./..." class="nav-link">
+            <i class='bx bxs-home'></i>
+              <p>
+                Inicio
+                
+              </p>
+            </a>
+          </li>-->
+          <li class="nav-item">
+            <a href="inicio.php" class="nav-link">
             <i class='bx bx-cool'></i>
               <p>
                 Inicio
@@ -35,35 +44,8 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-            <i class='bx bx-cog'></i>
-              <p>
-                Administración
-                
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-            <i class='bx bx-info-circle'></i>
-              <p>
-                Informacion
-                
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-            <i class='bx bx-expand'></i>
-              <p>
-                Experiencia
-                
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-            <i class='bx bx-food-menu'></i>
+            <a href="menu.php" class="nav-link">
+            <i class='bx bx-briefcase'></i>
               <p>
                 Menu
                 
@@ -71,7 +53,52 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="perfil.php" class="nav-link">
+            <i class='bx bxs-universal-access'></i>
+              <p>
+                Perfil
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="estudios.php" class="nav-link">
+            <i class='bx bx-cog'></i>
+              <p>
+                Estudios
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="informacion_personal.php" class="nav-link">
+            <i class='bx bx-info-circle'></i>
+              <p>
+                Informacion Personal
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="trabajos_realizados.php" class="nav-link">
+            <i class='bx bx-expand'></i>
+              <p>
+                Trabajos Realizados
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="experiencia.php" class="nav-link">
+            <i class='bx bx-food-menu'></i>
+              <p>
+                Experiencia
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="socialMedia.php" class="nav-link">
             <i class='bx bx-group'></i>
               <p>
                 Social Media
@@ -79,15 +106,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-            <i class='bx bx-briefcase'></i>
-              <p>
-                Trabajos
-                
-              </p>
-            </a>
-          </li>
+          
           <li class="nav-item">
             <a href="<?php BASE_URL;?>logout.php" class="nav-link">
             <i class='bx bx-left-arrow-alt'></i>

@@ -86,7 +86,7 @@ if(isset($_SESSION["idusuarios"])){
 
 <!-- jQuery -->
 <?php include("modulos/js.php");?>
-<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="menu.js"></script>
 </body>
 </html>
 

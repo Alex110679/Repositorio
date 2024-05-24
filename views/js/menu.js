@@ -1,17 +1,17 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-    $("socialMedia_form").on("submit",function(e){
+    $("menu_form").on("submit",function(e){
         guardaryeditar(e);
     });
 }
 
 function guardaryeditar(e){
     e.preventDefault();
-    var formData= new FormData($("#socialMedia_form")[0]);
+    var formData= new FormData($("#menu_form")[0]);
     
     $.ajax({
-        url:"/Thiago/controller/social_media.php?opc=guardaryeditar",
+        url:"/Thiago/controller/menu.php?opc=guardaryeditar",
         type:"POST",
         data:formData,
         contentType:false,
@@ -19,7 +19,7 @@ function guardaryeditar(e){
 
         success: function(data){
             console.log(data);
-            $('#socialMedia_data').DataTable().ajax.reload();
+            $('#menu_data').DataTable().ajax.reload();
             $('#modalcrearRedes').modal('hide');
 
         FileSystemWritableFileStream.fire({
