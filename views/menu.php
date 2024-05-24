@@ -31,9 +31,9 @@ if(isset($_SESSION["idusuarios"])){
         <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-            <h1>Estudios</h1>
+            <h1>Menu</h1>
             </div>
-        
+            
         </div>
         </div>
     </section>
@@ -44,7 +44,7 @@ if(isset($_SESSION["idusuarios"])){
             <div class="col-md-12">
             <div class="card card-primary card-outline">
                 <div class="card-header">
-                <h3 class="card-title">Estudios</h3>
+                <h3 class="card-title">Menu</h3>
                 </div>
                 <div class="card-body">
                 <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-default">Crear
@@ -54,13 +54,11 @@ if(isset($_SESSION["idusuarios"])){
 
 
                     <div class="card-body p-0">
-                    <table class="table" id="estudios_data">
+                    <table class="table" id="menu_data">
                         <thead>
                         <tr>
-                            <th>Titulo</th>
-                            <th>Lugar</th>
-                            <th>Año</th>
-                            <th>Tipo</th>
+                            <th>Opción</th>
+                            <th style="width: 40px">Enlace</th>
                         </tr>
                         </thead>
                     </table>
@@ -88,7 +86,7 @@ if(isset($_SESSION["idusuarios"])){
 
 <!-- jQuery -->
 <?php include("modulos/js.php");?>
-<script type="text/javascript" src="js/estudios.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
 </body>
 </html>
 
