@@ -11,7 +11,7 @@
         <div class="image">
         </div>
         <div class="info">
-          <input type="hidden" id="usu_id" value="<?php echo $_SESSION["idusuarios"] ?>">
+          <input type="hidden" id="usu_idx" value="<?php echo $_SESSION["idusuarios"] ?>">
           <a href="#" class="d-block"> <?php echo $_SESSION["usu_nom"]?></a>
         </div>
       </div>
@@ -27,7 +27,7 @@
         
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <i class='bx bx-cool'></i>
               <p>
                 Inicio
                 
@@ -36,7 +36,16 @@
           </li>
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <i class='bx bx-cog'></i>
+              <p>
+                Administración
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+            <i class='bx bx-info-circle'></i>
               <p>
                 Informacion
                 
@@ -45,7 +54,7 @@
           </li>
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <i class='bx bx-expand'></i>
               <p>
                 Experiencia
                 
@@ -54,7 +63,7 @@
           </li>
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <i class='bx bx-food-menu'></i>
               <p>
                 Menu
                 
@@ -63,7 +72,7 @@
           </li>
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <i class='bx bx-group'></i>
               <p>
                 Social Media
                 
@@ -72,7 +81,7 @@
           </li>
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <i class='bx bx-briefcase'></i>
               <p>
                 Trabajos
                 
@@ -81,7 +90,7 @@
           </li>
           <li class="nav-item">
             <a href="<?php BASE_URL;?>logout.php" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <i class='bx bx-left-arrow-alt'></i>
               <p>
                 Salir
                 
