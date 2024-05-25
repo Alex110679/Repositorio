@@ -54,7 +54,7 @@ if(isset($_SESSION["idusuarios"])){
 
 
                   <div class="card-body p-0">
-                    <table class="table" id="trabajos_realizados_data">
+                    <table class="table display responsive wrap" id="trabajos_realizados_data">
                       <thead>
                         <tr>
                           <th>ID</th>

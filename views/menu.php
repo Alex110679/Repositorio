@@ -54,7 +54,7 @@ if(isset($_SESSION["idusuarios"])){
 
 
                     <div class="card-body p-0">
-                    <table class="table" id="menu_data">
+                    <table class="table display responsive wrap" id="menu_data">
                         <thead>
                         <tr>
                             <th>Opción</th>
@@ -86,7 +86,7 @@ if(isset($_SESSION["idusuarios"])){
 
 <!-- jQuery -->
 <?php include("modulos/js.php");?>
-<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
 </body>
 </html>
 

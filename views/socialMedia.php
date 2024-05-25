@@ -1,7 +1,6 @@
 <?php 
 define("BASE_URL","Thiago/views/");
 require_once("../config/conexion.php");
-//require_once("../model/Usuario.php");
 if(isset($_SESSION["idusuarios"])){
 ?>
 
@@ -47,20 +46,25 @@ if(isset($_SESSION["idusuarios"])){
                 <h3 class="card-title">Admon Redes Sociales</h3>
               </div>
               <div class="card-body">
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-default">Crear
+                <button type="button" class="btn btn-outline-primary" id="add_button" onclick="nuevo()">Crear
                 </button>
                 <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#modal-primary">Cargar</button>
                 <div class="col-md-6">
 
 
                   <div class="card-body p-0">
-                    <table class="table" id="socialMedia_data">
+                    <table class="table display responsive wrap" id="socialMedia_data">
                       <thead>
                         <tr>
                           <th>Icono</th>
                           <th style="width: 40px">Enlace</th>
+                          <th></th>
+                          <th></th>
                         </tr>
                       </thead>
+                      <tbody>
+
+                      </tbody>
                     </table>
                   </div> 
                 </div> 
@@ -85,6 +89,7 @@ if(isset($_SESSION["idusuarios"])){
 <!-- ./wrapper -->
 
 <!-- jQuery -->
+<?php require_once("Modasocialmedia.php");?>
 <?php include("modulos/js.php");?>
 <script type="text/javascript" src="js/socialMedia.js"></script>
 </body>

@@ -12,7 +12,8 @@ class SocialMedia extends Conectar{
     public function get_socialMediaXid($idsocial_media){
         $social=parent::conexion();
         parent::set_names();
-        $sql="SELECT * FROM social_media WHERE idsocial_media=?";
+        $sql="SELECT * FROM social_media WHERE est=1 AND idsocial_media=?";
+        /*$sql="SELECT * FROM social_media WHERE idsocial_media=?";*/
         $sql=$social->prepare($sql);
         $sql->bindValue(1,$idsocial_media);
         $sql->execute();

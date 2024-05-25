@@ -2,7 +2,7 @@
 require_once("../config/conexion.php");
 require_once("../model/Social_Media.php");
 $social_media=new SocialMedia();
-switch($_GET["op"]){
+switch($_GET["opc"]){
     
     case"mostrar":
         $datos =$social_media->get_socialMediaXid($_POST["idsocial_media"]);
@@ -47,7 +47,7 @@ switch($_GET["op"]){
             class="btn btn-outline-warning btn-icon"><div><i class="fa fa-edit"></i></div></button>';
             $sub_array[]='<button type="button" onClick="eliminar('.$row["idsocial_media"].');" id="'.$row["idsocial_media"].'"
             class="btn btn-outline-danger btn-icon"><div><i class="fa fa-close"></i></div></button>';
-            $dat[]=$sub_array;            
+            $data[]=$sub_array;            
         }
         $results=array(
             "sEcho"=>1,
