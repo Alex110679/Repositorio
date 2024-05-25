@@ -21,8 +21,8 @@ function guardaryeditar(e){
             console.log(data);
             $('#experiencia_data').DataTable().ajax.reload();
             $('#modalcrearRedes').modal('hide');
-
-        FileSystemWritableFileStream.fire({
+        Swal.fire({
+        /*FileSystemWritableFileStream.fire({*/
             title:'Correcto!',
             text:'Se registro Correctamente',
             icon: 'success',
@@ -33,7 +33,7 @@ function guardaryeditar(e){
 }
 
 $(document).ready(function(){
-    $('#socialMedia').DataTable({
+    $('#experiencia').DataTable({
         "aProcessing":true,
         "aServerSide":true,
         dom: 'Bfrtip',
@@ -42,7 +42,7 @@ $(document).ready(function(){
             'csvHtml5',
         ],
         "ajax":{
-            url:"/thiago/controller/social_media.php?opc=listar",
+            url:"/thiago/controller/experiencia.php?opc=listar",
             type:"post",
             },
         "bDestroy":true,
@@ -77,3 +77,46 @@ $(document).ready(function(){
             
     })
 });
+function nuevo(){
+    $('#titulo_modal').html('Nueva Red Social');
+    //$('#socialMedia_form')[0].reset();
+    $('#modalcrearRedes').modal('show');
+}
+
+function editar (idexperiencia){
+    $.post("/thiago/controller/experiencia.php?opc=mostrar",{idexperiencia:idexperiencia},function (data){
+        data = JSON.parse(data);
+        //console.log(data)
+        $('#idexperiencia').val (data.idexperiencia);
+        $('#exp_titulo').val (data.exp_titulo);
+        $('#exp_lugar').val (data.exp_lugar);
+        $('#exp_annoIni').val (data.exp_annoIni);
+        $('#exp_annoFin').val (data.exp_annoFin);
+        $('#exp_tipo').val (data.exp_tipo);
+    });
+    $('#titulo_modal').html('Editar red');
+    $('#modalcrearRedes').modal('show');
+}
+
+function eliminar(idexperiencia){
+    Swal.fire({
+        title:'Eliminar!',
+        text:'Desea eliminar el Registro?',
+        icon:'error',
+        ShowCancelButton:true,
+        confirmButtonText:'Aceptar',
+        cancelButtonText:'Cancelar',
+    }).then((result)=>{
+        if(result.value){
+            $.post("/thiago/controller/experiencia.php?opc=eliminar",{idexperiencia:idexperiencia},function(data){
+                $('#experiencia_data').DataTable().ajax.reload();
+                Swal.fire({
+                    title:'Correcto!',
+                    text:'Se elimino Correctamente',
+                    icon:'success',
+                    confirmButtonText:'Aceptar'
+                })
+            });
+        }
+    });
+}

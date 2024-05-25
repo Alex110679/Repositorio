@@ -2,7 +2,7 @@
 require_once("../config/conexion.php");
 require_once("../model/menu.php");
 $menu=new Menu();
-switch($_GET["op"]){
+switch($_GET["opc"]){
     
     case"mostrar":
         $datos =$menu->get_menuXid($_POST["idmenu"]);

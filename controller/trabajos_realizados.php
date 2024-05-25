@@ -2,7 +2,7 @@
 require_once("../config/conexion.php");
 require_once("../model/trabajos_realizados.php");
 $trabajos_realizados=new Trabajos_realizados();
-switch($_GET["op"]){
+switch($_GET["opc"]){
     
     case"mostrar":
         $datos =$trabajos_realizados->get_trabajos_realizadosXid($_POST["idtrabajos_realizados"]);

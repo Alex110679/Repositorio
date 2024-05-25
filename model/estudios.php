@@ -12,7 +12,8 @@ class Estudios extends Conectar{
     public function get_estudiosXid($idestudios){
         $social=parent::conexion();
         parent::set_names();
-        $sql="SELECT * FROM estudios WHERE idestudios=?";
+        $sql="SELECT * FROM estudios WHERE est=1 AND idestudios=?";
+        /*$sql="SELECT * FROM estudios WHERE idestudios=?";*/
         $sql=$social->prepare($sql);
         $sql->bindValue(1,$idestudios);
         $sql->execute();
@@ -52,7 +53,6 @@ class Estudios extends Conectar{
         $sql->bindValue(3,$est_anno);
         $sql->bindValue(4,$est_tipo);
         $sql->bindValue(5,$idestudios);
-
         $sql->execute();
         return $resultado=$sql->fetchAll();
     }

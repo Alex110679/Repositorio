@@ -12,7 +12,8 @@ class Experiencia extends Conectar{
     public function get_experienciaXid($idexperiencia){
         $social=parent::conexion();
         parent::set_names();
-        $sql="SELECT * FROM experiencia WHERE idexperiencia=?";
+        $sql="SELECT * FROM experiencia WHERE est=1 AND idexperiencia=?";
+        /*$sql="SELECT * FROM experiencia WHERE idexperiencia=?";*/
         $sql=$social->prepare($sql);
         $sql->bindValue(1,$idexperiencia);
         $sql->execute();
@@ -54,7 +55,6 @@ class Experiencia extends Conectar{
         $sql->bindValue(4,$exp_annoFin);
         $sql->bindValue(5,$exp_tipo);
         $sql->bindValue(6,$idexperiencia);
-
         $sql->execute();
         return $resultado=$sql->fetchAll();
     }

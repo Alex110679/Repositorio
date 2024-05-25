@@ -22,7 +22,8 @@ function guardaryeditar(e){
             $('#trabajos_realizados_data').DataTable().ajax.reload();
             $('#modalcrearRedes').modal('hide');
 
-        FileSystemWritableFileStream.fire({
+        Swal.fire({
+        /*FileSystemWritableFileStream.fire({*/
             title:'Correcto!',
             text:'Se registro Correctamente',
             icon: 'success',
@@ -33,7 +34,7 @@ function guardaryeditar(e){
 }
 
 $(document).ready(function(){
-    $('#socialMedia').DataTable({
+    $('#trabajos_realizados').DataTable({
         "aProcessing":true,
         "aServerSide":true,
         dom: 'Bfrtip',
@@ -42,7 +43,7 @@ $(document).ready(function(){
             'csvHtml5',
         ],
         "ajax":{
-            url:"/thiago/controller/social_media.php?opc=listar",
+            url:"/thiago/controller/trabajos_realizados.php?opc=listar",
             type:"post",
             },
         "bDestroy":true,
@@ -77,3 +78,48 @@ $(document).ready(function(){
             
     })
 });
+function nuevo(){
+    $('#titulo_modal').html('Nueva Red Social');
+    //$('#socialMedia_form')[0].reset();
+    $('#modalcrearRedes').modal('show');
+}
+
+function editar (idtrabajos_realizados){
+    $.post("/thiago/controller/trabajos_realizados.php?opc=mostrar",{idtrabajos_realizados:idtrabajos_realizados},function (data){
+        data = JSON.parse(data);
+        //console.log(data)
+        $('#idtrabajos_realizados').val (data.idtrabajos_realizados);
+        $('#fil_id').val (data.fil_id);
+        $('#work_img').val (data.work_img);
+        $('#work_titulo').val (data.work_titulo);
+        $('#work_descripcion').val (data.work_descripcion);
+        $('#work_fecha').val (data.work_fecha);
+        $('#work_rol').val (data.work_rol);
+        $('#work_tecnologia').val (data.work_tecnologia);
+    });
+    $('#titulo_modal').html('Editar red');
+    $('#modalcrearRedes').modal('show');
+}
+
+function eliminar(idtrabajos_realizados){
+    Swal.fire({
+        title:'Eliminar!',
+        text:'Desea eliminar el Registro?',
+        icon:'error',
+        ShowCancelButton:true,
+        confirmButtonText:'Aceptar',
+        cancelButtonText:'Cancelar',
+    }).then((result)=>{
+        if(result.value){
+            $.post("/thiago/controller/trabajos_realizados.php?opc=eliminar",{idtrabajos_realizados:idtrabajos_realizados},function(data){
+                $('#trabajos_realizados_data').DataTable().ajax.reload();
+                Swal.fire({
+                    title:'Correcto!',
+                    text:'Se elimino Correctamente',
+                    icon:'success',
+                    confirmButtonText:'Aceptar'
+                })
+            });
+        }
+    });
+}

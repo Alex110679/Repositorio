@@ -2,7 +2,7 @@
 require_once("../config/conexion.php");
 require_once("../model/experiencia.php");
 $experiencia=new Experiencia();
-switch($_GET["op"]){
+switch($_GET["opc"]){
     
     case"mostrar":
         $datos =$experiencia->get_experienciaXid($_POST["idexperiencia"]);

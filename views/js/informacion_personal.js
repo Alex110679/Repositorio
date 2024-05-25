@@ -21,8 +21,9 @@ function guardaryeditar(e){
             console.log(data);
             $('#informacion_personal_data').DataTable().ajax.reload();
             $('#modalcrearRedes').modal('hide');
-
-        FileSystemWritableFileStream.fire({
+        
+        Swal.fire({
+        /*FileSystemWritableFileStream.fire({*/
             title:'Correcto!',
             text:'Se registro Correctamente',
             icon: 'success',
@@ -33,7 +34,7 @@ function guardaryeditar(e){
 }
 
 $(document).ready(function(){
-    $('#socialMedia').DataTable({
+    $('#informacion_personal').DataTable({
         "aProcessing":true,
         "aServerSide":true,
         dom: 'Bfrtip',
@@ -42,7 +43,7 @@ $(document).ready(function(){
             'csvHtml5',
         ],
         "ajax":{
-            url:"/thiago/controller/social_media.php?opc=listar",
+            url:"/thiago/controller/informacion_personal.php?opc=listar",
             type:"post",
             },
         "bDestroy":true,
@@ -77,3 +78,47 @@ $(document).ready(function(){
             
     })
 });
+function nuevo(){
+    $('#titulo_modal').html('Nueva Red Social');
+    //$('#socialMedia_form')[0].reset();
+    $('#modalcrearRedes').modal('show');
+}
+
+function editar (id){
+    $.post("/thiago/controller/informacion_personal.php?opc=mostrar",{idinformacion_personal:idinformacion_personal},function (data){
+        data = JSON.parse(data);
+        //console.log(data)
+        $('#idinformacion_personal').val (data.idinformacion_personal);
+        $('#socmed_icono').val (data.info_nacimiento);
+        $('#socmed_url').val (data.info_celular);
+        $('#socmed_icono').val (data.info_email);
+        $('#socmed_icono').val (data.info_url);
+        $('#socmed_icono').val (data.info_direccion);
+        $('#socmed_icono').val (data.info_cargo);
+    });
+    $('#titulo_modal').html('Editar red');
+    $('#modalcrearRedes').modal('show');
+}
+
+function eliminar(idinformacion_personal){
+    Swal.fire({
+        title:'Eliminar!',
+        text:'Desea eliminar el Registro?',
+        icon:'error',
+        ShowCancelButton:true,
+        confirmButtonText:'Aceptar',
+        cancelButtonText:'Cancelar',
+    }).then((result)=>{
+        if(result.value){
+            $.post("/thiago/controller/informacion_personal.php?opc=eliminar",{idinformacion_personal:idinformacion_personal},function(data){
+                $('#informacion_personal_data').DataTable().ajax.reload();
+                Swal.fire({
+                    title:'Correcto!',
+                    text:'Se elimino Correctamente',
+                    icon:'success',
+                    confirmButtonText:'Aceptar'
+                })
+            });
+        }
+    });
+}

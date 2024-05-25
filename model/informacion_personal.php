@@ -12,7 +12,8 @@ class Informacion_personal extends Conectar{
     public function get_informacion_personalXid($idinformacion_personal){
         $social=parent::conexion();
         parent::set_names();
-        $sql="SELECT * FROM informacion_personal WHERE idinformacion_personal=?";
+        $sql="SELECT * FROM informacion_personal WHERE est=1 AND idinformacion_personal=?";
+        /*$sql="SELECT * FROM informacion_personal WHERE idinformacion_personal=?";*/
         $sql=$social->prepare($sql);
         $sql->bindValue(1,$idinformacion_personal);
         $sql->execute();

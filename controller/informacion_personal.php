@@ -2,7 +2,7 @@
 require_once("../config/conexion.php");
 require_once("../model/informacion_personal.php");
 $informacion_personal=new Informacion_personal();
-switch($_GET["op"]){
+switch($_GET["opc"]){
     
     case"mostrar":
         $datos =$informacion_personal->get_informacion_personalXid($_POST["idinformacion_personal"]);

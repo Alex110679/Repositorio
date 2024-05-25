@@ -12,7 +12,8 @@ class Menu extends Conectar{
     public function get_menuXid($idmenu){
         $social=parent::conexion();
         parent::set_names();
-        $sql="SELECT * FROM menu WHERE idmenu=?";
+        $sql="SELECT * FROM menu WHERE est=1 AND idmenu=?";
+        /*$sql="SELECT * FROM menu WHERE idmenu=?";*/
         $sql=$social->prepare($sql);
         $sql->bindValue(1,$idmenu);
         $sql->execute();

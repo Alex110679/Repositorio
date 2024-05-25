@@ -43,79 +43,92 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="menu.php" class="nav-link">
+          <a href="menu.php" class="nav-link">
+          <li class="nav-item">            
             <i class='bx bx-briefcase'></i>
               <p>
                 Menu
                 
               </p>
+            </li>
             </a>
-          </li>
+          <a href="perfil.php" class="nav-link">
           <li class="nav-item">
-            <a href="perfil.php" class="nav-link">
+            
             <i class='bx bxs-universal-access'></i>
               <p>
                 Perfil
                 
               </p>
-            </a>
+            
           </li>
-          <li class="nav-item">
-            <a href="estudios.php" class="nav-link">
+          </a>
+          <a href="estudios.php" class="nav-link">
+            <li class="nav-item">
+            
             <i class='bx bx-cog'></i>
               <p>
                 Estudios
                 
               </p>
-            </a>
+            
           </li>
+          </a>
+          <a href="informacion_personal.php" class="nav-link">
           <li class="nav-item">
-            <a href="informacion_personal.php" class="nav-link">
+            
             <i class='bx bx-info-circle'></i>
               <p>
                 Informacion Personal
                 
               </p>
-            </a>
+            
           </li>
+          </a>
+          <a href="trabajos_realizados.php" class="nav-link">
           <li class="nav-item">
-            <a href="trabajos_realizados.php" class="nav-link">
+            
             <i class='bx bx-expand'></i>
               <p>
                 Trabajos Realizados
                 
               </p>
-            </a>
+            
           </li>
+          </a>
+          <a href="experiencia.php" class="nav-link">
           <li class="nav-item">
-            <a href="experiencia.php" class="nav-link">
+            
             <i class='bx bx-food-menu'></i>
               <p>
                 Experiencia
                 
               </p>
-            </a>
+            
           </li>
+          </a>
+          <a href="socialMedia.php" class="nav-link">
           <li class="nav-item">
-            <a href="socialMedia.php" class="nav-link">
+            
             <i class='bx bx-group'></i>
               <p>
                 Social Media
                 
               </p>
-            </a>
+            
           </li>
-          
+          </a>
+          <a href="<?php BASE_URL;?>logout.php" class="nav-link">
           <li class="nav-item">
-            <a href="<?php BASE_URL;?>logout.php" class="nav-link">
+            
             <i class='bx bx-left-arrow-alt'></i>
               <p>
                 Salir
                 
               </p>
-            </a>
+            
           </li>
+          </a>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

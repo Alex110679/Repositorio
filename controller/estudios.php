@@ -2,7 +2,7 @@
 require_once("../config/conexion.php");
 require_once("../model/estudios.php");
 $estudios=new Estudios();
-switch($_GET["op"]){
+switch($_GET["opc"]){
     
     case"mostrar":
         $datos =$estudios->get_estudiosXid($_POST["idestudios"]);

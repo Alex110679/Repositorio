@@ -12,7 +12,8 @@ class Trabajos_realizados extends Conectar{
     public function get_trabajos_realizadosXid($idtrabajos_realizados){
         $social=parent::conexion();
         parent::set_names();
-        $sql="SELECT * FROM trabajos_realizados WHERE idtrabajos_realizados=?";
+        $sql="SELECT * FROM trabajos_realizados WHERE est=1 AND idtrabajos_realizados=?";
+        /*$sql="SELECT * FROM trabajos_realizados WHERE idtrabajos_realizados=?";*/
         $sql=$social->prepare($sql);
         $sql->bindValue(1,$idtrabajos_realizados);
         $sql->execute();

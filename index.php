@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +27,7 @@
                     <li><a href="#estudio" onclick="seleccionar()">ESTUDIO</a></li>
                     <li><a href="#portafolio" onclick="seleccionar()">PORTAFOLIO</a></li>
                     <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
+                    <li><a href="login.php" onclick="seleccionar()">ADMINISTRACIÓN</a></li>
                     <div class="animation start-home"></div>
                 </ul>
                 
@@ -50,7 +53,6 @@
                     <a href="#"><i class="bx bxl-youtube"></i></a>
                     <a href="#"><i class="bx bxl-whatsapp"></i></a>
                     <a href="#"><i class="bx bxl-twitter"></i></a>
-                    
                 </div>
             </div>
         </section>
