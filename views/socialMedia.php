@@ -56,8 +56,10 @@ if(isset($_SESSION["idusuarios"])){
                     <table class="table display responsive wrap" id="socialMedia_data">
                       <thead>
                         <tr>
-                          <th>Icono</th>
-                          <th style="width: 40px">Enlace</th>
+                          <th class="wd-15p">Icono</th>
+                          <th class="wd-15p">Enlace</th>
+                          <!---<th>Icono</th>
+                          <th style="width: 40px">Enlace</th>--->
                           <th></th>
                           <th></th>
                         </tr>
@@ -89,7 +91,7 @@ if(isset($_SESSION["idusuarios"])){
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<?php require_once("Modasocialmedia.php");?>
+<?php require_once("Modalsocialmedia.php");?>
 <?php include("modulos/js.php");?>
 <script type="text/javascript" src="js/socialMedia.js"></script>
 </body>

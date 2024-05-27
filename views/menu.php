@@ -85,6 +85,7 @@ if(isset($_SESSION["idusuarios"])){
 <!-- ./wrapper -->
 
 <!-- jQuery -->
+<?php require_once("Modalmenu.php");?>
 <?php include("modulos/js.php");?>
 <script type="text/javascript" src="js/menu.js"></script>
 </body>

@@ -53,6 +53,7 @@ class Estudios extends Conectar{
         $sql->bindValue(3,$est_anno);
         $sql->bindValue(4,$est_tipo);
         $sql->bindValue(5,$idestudios);
+        
         $sql->execute();
         return $resultado=$sql->fetchAll();
     }

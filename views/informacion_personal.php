@@ -89,6 +89,7 @@ if(isset($_SESSION["idusuarios"])){
 <!-- ./wrapper -->
 
 <!-- jQuery -->
+<?php require_once("Modalinformacion_personal.php");?>
 <?php include("modulos/js.php");?>
 <script type="text/javascript" src="js/informacion_personal.js"></script>
 </body>

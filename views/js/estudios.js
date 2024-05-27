@@ -49,9 +49,9 @@ $(document).ready(function(){
         "bDestroy":true,
         "responsive":true,
         "bInfo":true,
-        "iDisplaylenght":15,
+        "iDisplaylength":15,
         "order":[[0,"desc"]],
-        "languaje":{
+        "language":{
             "sProcessing":      "Procesando...",
             "sLengthMenu":      "Mostrar _MENU_ registros",
             "sZeroRecords":     "No se encontraron resultados",

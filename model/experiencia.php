@@ -31,6 +31,7 @@ class Experiencia extends Conectar{
         $sql->bindValue(3,$exp_annoIni);
         $sql->bindValue(4,$exp_annoFin);
         $sql->bindValue(5,$exp_tipo);
+        
         $sql->execute();
         return $resultado=$sql->fetchAll();
     }

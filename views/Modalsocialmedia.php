@@ -4,7 +4,7 @@
             <div class="modal-header pd-y-20 pd-xx25">
                 <h6 id="lbltitulo" class="tx-14 mg-b-0 tx-uppercase tx-inverser tx-bold"></h6>
             </div>
-            <----formulario mantenimiento-->
+            <!----formulario mantenimiento-->
             <form method="post" id="socialMedia_form">
                 <div class="modal-body">
                     <input type="hidden" name="socmed_id"/>

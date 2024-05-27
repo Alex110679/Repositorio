@@ -88,6 +88,7 @@ if(isset($_SESSION["idusuarios"])){
 <!-- ./wrapper -->
 
 <!-- jQuery -->
+<?php require_once("Modalexperiencia.php");?>
 <?php include("modulos/js.php");?>
 <script type="text/javascript" src="js/experiencia.js"></script>
 </body>
