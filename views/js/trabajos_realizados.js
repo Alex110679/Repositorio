@@ -1,7 +1,7 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-    $("trabajos_realizados_form").on("submit",function(e){
+    $("#trabajos_realizados_form").on("submit",function(e){
         guardaryeditar(e);
     });
 }
@@ -20,7 +20,7 @@ function guardaryeditar(e){
         success: function(data){
             console.log(data);
             $('#trabajos_realizados_data').DataTable().ajax.reload();
-            $('#modalcrearRedes').modal('hide');
+            $('#Modaltrabajos_realizados').modal('hide');
 
         Swal.fire({
         /*FileSystemWritableFileStream.fire({*/
@@ -81,7 +81,7 @@ $(document).ready(function(){
 function nuevo(){
     $('#titulo_modal').html('Nueva Red Social');
     //$('#socialMedia_form')[0].reset();
-    $('#modalcrearRedes').modal('show');
+    $('#Modaltrabajos_realizados').modal('show');
 }
 
 function editar (idtrabajos_realizados){
@@ -89,16 +89,16 @@ function editar (idtrabajos_realizados){
         data = JSON.parse(data);
         //console.log(data)
         $('#idtrabajos_realizados').val (data.idtrabajos_realizados);
-        $('#fil_id').val (data.fil_id);
-        $('#work_img').val (data.work_img);
+        //$('#fil_id').val (data.fil_id);
+        //$('#work_img').val (data.work_img);
         $('#work_titulo').val (data.work_titulo);
         $('#work_descripcion').val (data.work_descripcion);
         $('#work_fecha').val (data.work_fecha);
         $('#work_rol').val (data.work_rol);
-        $('#work_tecnologia').val (data.work_tecnologia);
+        //$('#work_tecnologia').val (data.work_tecnologia);
     });
-    $('#titulo_modal').html('Editar red');
-    $('#modalcrearRedes').modal('show');
+    $('#titulo_modal').html('Editar');
+    $('#Modaltrabajos_realizados').modal('show');
 }
 
 function eliminar(idtrabajos_realizados){

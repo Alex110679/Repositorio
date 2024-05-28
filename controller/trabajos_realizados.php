@@ -8,13 +8,13 @@ switch($_GET["opc"]){
         $datos =$trabajos_realizados->get_trabajos_realizadosXid($_POST["idtrabajos_realizados"]);
         if(is_array($datos)==true and count($datos)<>0){
             foreach($datos as $row){
-                $output["fil_id"] = $row["fil_id"];
-                $output["work_img"] = $row["work_img"];
+                //$output["fil_id"] = $row["fil_id"];
+                //$output["work_img"] = $row["work_img"];
                 $output["work_titulo"] = $row["work_titulo"];
                 $output["work_descripcion"] = $row["work_descripcion"];
                 $output["work_fecha"] = $row["work_fecha"];
                 $output["work_rol"] = $row["work_rol"];
-                $output["work_tecnologia"] = $row["work_tecnologia"];
+                //$output["work_tecnologia"] = $row["work_tecnologia"];
             }
             echo json_encode($output);
         }
@@ -23,21 +23,21 @@ switch($_GET["opc"]){
     case"modificar":
         $trabajos_realizados->update_trabajos_realizados(
             $_POST["idtrabajos_realizados"],
-            $_POST["fil_id"],
-            $_POST["work_img"],
+            //$_POST["fil_id"],
+            //$_POST["work_img"],
             $_POST["work_titulo"],
             $_POST["work_descripcion"],
             $_POST["work_fecha"],
             $_POST["work_rol"],
-            $_POST["work_tecnologia"],
+            //$_POST["work_tecnologia"],
         );
         break;
 
     case"guardaryeditar":
         if(empty($_POST["idtrabajos_realizados"])){
-            $trabajos_realizados->insert_trabajos_realizados($_POST["fil_id"],$_POST["work_img"],$_POST["work_titulo"],$_POST["work_descripcion"],$_POST["work_fecha"],$_POST["work_rol"],$_POST["work_tecnologia"]);
+        $trabajos_realizados->insert_trabajos_realizados(/*$_POST["fil_id"],$_POST["work_img"],*/$_POST["work_titulo"],$_POST["work_descripcion"],$_POST["work_fecha"],$_POST["work_rol"]/*,$_POST["work_tecnologia"]*/);
         }else{
-            $trabajos_realizados->update_trabajos_realizados($_POST["idtrabajos_realizados"],$_POST["fil_id"],$_POST["work_img"],$_POST["work_titulo"],$_POST["work_descripcion"],$_POST["work_fecha"],$_POST["work_rol"],$_POST["work_tecnologia"]);
+        $trabajos_realizados->update_trabajos_realizados($_POST["idtrabajos_realizados"],/*$_POST["fil_id"],$_POST["work_img"],*/$_POST["work_titulo"],$_POST["work_descripcion"],$_POST["work_fecha"],$_POST["work_rol"]/*,$_POST["work_tecnologia"]*/);
         }
         break;
 
@@ -50,13 +50,13 @@ switch($_GET["opc"]){
         $data=Array();
         foreach($datos as $row){
             $sub_array=array();
-            $sub_array[]=$row["fil_id"];
-            $sub_array[]=$row["work_img"];
+            /*$sub_array[]=$row["fil_id"];
+            $sub_array[]=$row["work_img"];*/
             $sub_array[]=$row["work_titulo"];
             $sub_array[]=$row["work_descripcion"];
             $sub_array[]=$row["work_fecha"];
             $sub_array[]=$row["work_rol"];
-            $sub_array[]=$row["work_tecnologia"];
+            /*$sub_array[]=$row["work_tecnologia"];*/
 
             $sub_array[]='<button type="button" onClick="editar('.$row["idtrabajos_realizados"].');" id="'.$row["idtrabajos_realizados"].'"
             class="btn btn-outline-warning btn-icon"><div><i class="fa fa-edit"></i></div></button>';

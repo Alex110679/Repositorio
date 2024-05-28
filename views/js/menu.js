@@ -20,7 +20,7 @@ function guardaryeditar(e){
         success: function(data){
             console.log(data);
             $('#menu_data').DataTable().ajax.reload();
-            $('#modalcrearRedes').modal('hide');
+            $('#Modalmenu').modal('hide');
             
         Swal.fire({
         /*FileSystemWritableFileStream.fire({*/
@@ -81,7 +81,7 @@ $(document).ready(function(){
 function nuevo(){
     $('#titulo_modal').html('Nueva Red Social');
     //$('#socialMedia_form')[0].reset();
-    $('#modalcrearRedes').modal('show');
+    $('#Modalmenu').modal('show');
 }
 
 function editar (idmenu){
@@ -93,7 +93,7 @@ function editar (idmenu){
         $('#url').val (data.url);
     });
     $('#titulo_modal').html('Editar red');
-    $('#modalcrearRedes').modal('show');
+    $('#Modalmenu').modal('show');
 }
 
 function eliminar(idmenu){

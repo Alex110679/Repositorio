@@ -57,13 +57,13 @@ if(isset($_SESSION["idusuarios"])){
                     <table class="table display responsive wrap" id="trabajos_realizados_data">
                       <thead>
                         <tr>
-                          <th>ID</th>
-                          <th>Imagen</th>
+                          <!--<th>ID</th>
+                          <th>Imagen</th>-->
                           <th>Titulo</th>
                           <th>Descripción</th>
                           <th>Fecha</th>
                           <th>Rol</th>
-                          <th>Tecnologia</th>
+                          <!--<th>Tecnologia</th>-->
                           <th></th>
                           <th></th>
                         </tr>

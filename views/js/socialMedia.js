@@ -1,7 +1,7 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-    $("social_media_form").on("submit",function(e){
+    $("#social_media_form").on("submit",function(e){ /* se agrego la # ojo*/
         guardaryeditar(e);
     });
 }
@@ -100,7 +100,8 @@ function eliminar(idsocial_media){
         title:'Eliminar!',
         text:'Desea eliminar el Registro?',
         icon:'error',
-        ShowCancelButton:true,
+        showCancelButton:true,
+        /*ShowCancelButton:true,*/
         confirmButtonText:'Aceptar',
         cancelButtonText:'Cancelar',
     }).then((result)=>{

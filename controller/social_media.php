@@ -19,7 +19,7 @@ switch($_GET["opc"]){
         $social_media->update_socialMedia(
             $_POST["idsocial_media"],
             $_POST["socmed_icono"],
-            $_POST["socmed_url"],
+            $_POST["socmed_url"]
         );
         break;
 
@@ -44,9 +44,9 @@ switch($_GET["opc"]){
             $sub_array[]=$row["socmed_url"];
 
             $sub_array[]='<button type="button" onClick="editar('.$row["idsocial_media"].');" id="'.$row["idsocial_media"].'"
-            class="btn btn-outline-warning btn-icon"><div><i class="fa fa-edit"></i></div></button>';
+            class="btn btn-outline-warning btn-icon"><div><i class="bx bx-edit-alt"></i></div></button>';
             $sub_array[]='<button type="button" onClick="eliminar('.$row["idsocial_media"].');" id="'.$row["idsocial_media"].'"
-            class="btn btn-outline-danger btn-icon"><div><i class="fa fa-close"></i></div></button>';
+            class="btn btn-outline-danger btn-icon"><div><i class="bx bx-trash"></i></div></button>';
             $data[]=$sub_array;            
         }
         $results=array(

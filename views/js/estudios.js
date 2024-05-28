@@ -20,7 +20,7 @@ function guardaryeditar(e){
         success: function(data){
             console.log(data);
             $('#estudios_data').DataTable().ajax.reload();
-            $('#modalcrearRedes').modal('hide');
+            $('#Modalestudios').modal('hide');
 
         /*FileSystemWritableFileStream.fire({*/
         Swal.fire({
@@ -81,7 +81,7 @@ $(document).ready(function(){
 function nuevo(){
     $('#titulo_modal').html('Nueva Red Social');
     //$('#socialMedia_form')[0].reset();
-    $('#modalcrearRedes').modal('show');
+    $('#Modalestudios').modal('show');
 }
 
 function editar (idestudios){
@@ -95,7 +95,7 @@ function editar (idestudios){
         $('#est_tipo').val (data.est_tipo);
     });
     $('#titulo_modal').html('Editar red');
-    $('#modalcrearRedes').modal('show');
+    $('#Modalestudios').modal('show');
 }
 
 function eliminar(idestudios){

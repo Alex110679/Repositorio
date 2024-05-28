@@ -56,12 +56,13 @@
                     <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
                     <li><a href="#estudio" onclick="seleccionar()">ESTUDIO</a></li>
                     <li><a href="#portafolio" onclick="seleccionar()">PORTAFOLIO</a></li>
-                    <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
-                    <li><a href="login.php" onclick="seleccionar()">ADMINISTRACIÓN</a></li> -->
+                    <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li> -->
+                    
                     <?php 
                     endfor;
                     ?>
-                    <li><a href="login.php" onclick="seleccionar()">ADMINISTRACIÓN</a></li>
+                    <li><a href="login.php" onclick="seleccionar()">ADMINISTRACIÓN</a></li> 
+                    
                     <div class="animation start-home"></div>
                 </ul>
                 
@@ -85,7 +86,8 @@
                 <?php 
                 for($i=0;$i<sizeof($soc);$i++):
                 ?>
-                    <a href="<?php echo $soc[$i]["socmed_url"] ?>"><i class='bx bx-<?php echo $soc[$i]["socmed_icono"]?>'></i></a>
+                    <a href="<?php echo $soc[$i]["socmed_url"] ?>"><i class='bx bxl-<?php echo $soc[$i]["socmed_icono"]?>'></i></a>
+                    
                 <?php endfor;
                 ?>
                 <!--
@@ -475,11 +477,11 @@
                 <i class="fa-solid fa-angles-up"></i>
             </a>
             <div class="redes">
-                <a href="#"><i class="bx bxl-facebook"></i></a>
+                <!--<a href="#"><i class="bx bxl-facebook"></i></a>
                 <a href="#"><i class="bx bxl-instagram"></i></a>
                 <a href="#"><i class="bx bxl-youtube"></i></a>
                 <a href="#"><i class="bx bxl-whatsapp"></i></a>
-                <a href="#"><i class="bx bxl-twitter"></i></a>
+                <a href="#"><i class="bx bxl-twitter"></i></a> -->
                 <h3>©2024 Alexander Higuera Paz</h3>
                 <h3>alexander.higuera@uniminuto.edu.co</h3>
             </div>
