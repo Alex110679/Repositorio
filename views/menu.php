@@ -59,6 +59,8 @@ if(isset($_SESSION["idusuarios"])){
                         <tr>
                             <th>Opción</th>
                             <th style="width: 40px">Enlace</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                         </thead>
                     </table>

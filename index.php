@@ -1,4 +1,30 @@
+<?php require_once("config/conexion.php");?>
+<?php
+    require_once("model/informacion_personal.php");
+    $usuario = new informacion_personal();
+    $usu = $usuario->get_informacion_personal();
 
+    require_once("model/Social_Media.php");
+    $social = new SocialMedia();
+    $soc = $social->get_socialMedia();
+
+    require_once("model/estudios.php");
+    $estudios = new estudios();
+    $est = $estudios->get_estudios();
+
+    require_once("model/experiencia.php");
+    $experiencia = new experiencia();
+    $exp = $experiencia->get_experiencia();
+
+    require_once("model/trabajos_realizados.php");
+    $trabajos_realizados = new trabajos_realizados();
+    $work = $trabajos_realizados->get_trabajos_realizados();
+
+    require_once("model/menu.php");
+    $menu = new menu();
+    $x = $menu->get_menu();
+    
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,13 +46,21 @@
             </div>
             <nav id="nav" class="">
                 <ul>
-                    <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
+                <?php 
+                for($i=0;$i<sizeof($x);$i++):
+                ?>
+                    <li><a href="#<?php echo $x[$i]["url"] ?>" onclick="seleccionar()"><?php echo $x[$i]["opcion"] ?></a></li>
+                    <!--MENU
                     <li><a href="#sobremi" onclick="seleccionar()">SOBRE_MI</a></li>
                     <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
                     <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
                     <li><a href="#estudio" onclick="seleccionar()">ESTUDIO</a></li>
                     <li><a href="#portafolio" onclick="seleccionar()">PORTAFOLIO</a></li>
                     <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
+                    <li><a href="login.php" onclick="seleccionar()">ADMINISTRACIÓN</a></li> -->
+                    <?php 
+                    endfor;
+                    ?>
                     <li><a href="login.php" onclick="seleccionar()">ADMINISTRACIÓN</a></li>
                     <div class="animation start-home"></div>
                 </ul>
@@ -48,11 +82,19 @@
                 <h1>ALEXANDER HIGUERA</h1>
                 <H2>Estudiante de Ingenieria de Sistemas y Software</H2>
                 <div class="redes">
+                <?php 
+                for($i=0;$i<sizeof($soc);$i++):
+                ?>
+                    <a href="<?php echo $soc[$i]["socmed_url"] ?>"><i class='bx bx-<?php echo $soc[$i]["socmed_icono"]?>'></i></a>
+                <?php endfor;
+                ?>
+                <!--
                     <a href="#"><i class="bx bxl-facebook"></i></a>
                     <a href="#"><i class="bx bxl-instagram"></i></a>
                     <a href="#"><i class="bx bxl-youtube"></i></a>
                     <a href="#"><i class="bx bxl-whatsapp"></i></a>
                     <a href="#"><i class="bx bxl-twitter"></i></a>
+                -->
                 </div>
             </div>
         </section>
@@ -72,6 +114,7 @@
                     <div class="fila">
                         <!-- datos personales-->
                         <div class="col">
+                            for
                             <h3>Datos personales</h3>
                             <ul>
                                 <li>
@@ -94,6 +137,7 @@
                                     <strong>ocupación</strong>
                                     Pensionado <span> POLICIA </span>
                                 </li>
+                                end for
                             </ul>
                         </div>
 
@@ -101,6 +145,7 @@
                         <div class="col">
                             <H3>Destrezas</H3>
                             <div class="contenedor-intereses">
+                                
                                 <div class="intereses">
                                     <!--<i class="fa-brands fa-python"></i>-->
                                     <span></span>
@@ -108,6 +153,7 @@
                                     <i class="fa-brands fa-python"></i>
                                     PYTHON
                                 </div>
+                                
 
                                 <div class="intereses">
                                     <!--<i class="fa-brands fa-python"></i>-->
@@ -272,16 +318,22 @@
 
                     <div class="col derecha">
                         <h3>Policia Nacional</h3>
+                        for
                         <div class="item der">
+                            <!--titulo-->
                             <h4>Patrullero</h4>
+                            <!--rol-->
                             <span class="casa">Vigilancia</span>
+                            <!--fecha-->
                             <span class="fecha">1998 - 2010</span>
+                            <!--descripcion-->
                             <p>Durante este periodo labore en diferentes lugares de Bogotá como son: Carcel la Picota(Alta seguridad), Unidad Permanente de Justicia (UPJ) y por ultimo Estacion de Policia SUBA - CAI AURES.</p>
                             <div class="conectord">
                                 <div class="circulod"></div>
                             </div>
+                            
                         </div>
-
+                        endfor
                         <div class="item der">
                             <h4>Subintendente</h4>
                             <span class="casa">Gaula</span>

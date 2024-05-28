@@ -34,7 +34,7 @@ function guardaryeditar(e){
 }
 
 $(document).ready(function(){
-    $('#trabajos_realizados').DataTable({
+    $('#trabajos_realizados_data').DataTable({
         "aProcessing":true,
         "aServerSide":true,
         dom: 'Bfrtip',

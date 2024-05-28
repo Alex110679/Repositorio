@@ -62,6 +62,8 @@ if(isset($_SESSION["idusuarios"])){
                             <th>Año Inicial</th>
                             <th>Año Final</th>
                             <th>Tipo</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                         </thead>
                         </table>

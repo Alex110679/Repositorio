@@ -1,14 +1,14 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-   $("socialMedia_form").on("submit",function(e){
+    $("social_media_form").on("submit",function(e){
         guardaryeditar(e);
     });
 }
 
 function guardaryeditar(e){
     e.preventDefault();
-    var formData= new FormData($("#socialMedia_form")[0]);
+    var formData= new FormData($("#social_media_form")[0]);
     
     $.ajax({
         url:"/Thiago/controller/social_media.php?opc=guardaryeditar",
@@ -20,7 +20,7 @@ function guardaryeditar(e){
         success: function(data){
             console.log(data);
             $('#socialMedia_data').DataTable().ajax.reload();
-            $('#modalcrearRedes').modal('hide');
+            $('#Modalsocialmedia').modal('hide');
 
             Swal.fire({
                 title:'Correcto!',
@@ -80,22 +80,22 @@ $(document).ready(function(){
 function nuevo(){
     $('#titulo_modal').html('Nueva Red Social');
     //$('#socialMedia_form')[0].reset();
-    $('#modalcrearRedes').modal('show');
+    $('#Modalsocialmedia').modal('show');
 }
 
-function editar (idsocialMedia){
-    $.post("/thiago/controller/social_media.php?opc=mostrar",{idsocialMedia:idsocialMedia},function (data){
+function editar (idsocial_media){
+    $.post("/thiago/controller/social_media.php?opc=mostrar",{idsocial_media:idsocial_media},function (data){
         data = JSON.parse(data);
-        //console.log(data)
-        $('#idsocialMedia').val (data.idsocialMedia);
+        console.log(data)
+        $('#idsocial_media').val (data.idsocial_media);
         $('#socmed_icono').val (data.socmed_icono);
         $('#socmed_url').val (data.socmed_url);
     });
     $('#titulo_modal').html('Editar red');
-    $('#modalcrearRedes').modal('show');
+    $('#Modalsocialmedia').modal('show');
 }
 
-function eliminar(idsocialMedia){
+function eliminar(idsocial_media){
     Swal.fire({
         title:'Eliminar!',
         text:'Desea eliminar el Registro?',
@@ -105,7 +105,7 @@ function eliminar(idsocialMedia){
         cancelButtonText:'Cancelar',
     }).then((result)=>{
         if(result.value){
-            $.post("/thiago/controller/social_media.php?opc=eliminar",{idsocialMedia:idsocialMedia},function(data){
+            $.post("/thiago/controller/social_media.php?opc=eliminar",{idsocial_media:idsocial_media},function(data){
                 $('#socialMedia_data').DataTable().ajax.reload();
                 Swal.fire({
                     title:'Correcto!',

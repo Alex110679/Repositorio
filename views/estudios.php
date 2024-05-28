@@ -61,6 +61,8 @@ if(isset($_SESSION["idusuarios"])){
                             <th>Lugar</th>
                             <th>Año</th>
                             <th>Tipo</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                         </thead>
                     </table>

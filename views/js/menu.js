@@ -34,7 +34,7 @@ function guardaryeditar(e){
 }
 
 $(document).ready(function(){
-    $('#menu').DataTable({
+    $('#menu_data').DataTable({
         "aProcessing":true,
         "aServerSide":true,
         dom: 'Bfrtip',

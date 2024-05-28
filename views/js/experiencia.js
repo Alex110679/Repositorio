@@ -33,7 +33,7 @@ function guardaryeditar(e){
 }
 
 $(document).ready(function(){
-    $('#experiencia').DataTable({
+    $('#experiencia_data').DataTable({
         "aProcessing":true,
         "aServerSide":true,
         dom: 'Bfrtip',

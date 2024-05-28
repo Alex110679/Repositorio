@@ -63,6 +63,8 @@ if(isset($_SESSION["idusuarios"])){
                             <th>Enlace</th>
                             <th>direccion</th>
                             <th>Cargo</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                         </thead>
                     </table>
