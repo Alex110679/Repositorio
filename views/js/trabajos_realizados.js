@@ -1,7 +1,7 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-    $("#trabajos_realizados_form").on("submit",function(e){
+    $("#trabajos_realizados_form").on("submit",function(e){ /* se agrego la # ojo*/
         guardaryeditar(e);
     });
 }
@@ -22,15 +22,14 @@ function guardaryeditar(e){
             $('#trabajos_realizados_data').DataTable().ajax.reload();
             $('#Modaltrabajos_realizados').modal('hide');
 
-        Swal.fire({
-        /*FileSystemWritableFileStream.fire({*/
-            title:'Correcto!',
-            text:'Se registro Correctamente',
-            icon: 'success',
-            confirmButtonText:'Aceptar'
-        })
+            Swal.fire({
+                title:'Correcto!',
+                text:'Se registro Correctamente',
+                icon: 'success',
+                confirmButtonText:'Aceptar'
+            })
         }
-    })
+    });
 }
 
 $(document).ready(function(){
@@ -45,7 +44,7 @@ $(document).ready(function(){
         "ajax":{
             url:"/thiago/controller/trabajos_realizados.php?opc=listar",
             type:"post",
-            },
+        },
         "bDestroy":true,
         "responsive":true,
         "bInfo":true,
@@ -74,12 +73,12 @@ $(document).ready(function(){
                 "sSortAscending":   ":Activar para ordenar la columna de manera ascendente",
                 "sSortDescending":   ":Activar para ordenar la columna de manera descendente",
             }
-        }
+        },
             
-    })
+    });
 });
 function nuevo(){
-    $('#titulo_modal').html('Nueva Red Social');
+    $('#titulo_modal').html('Trabajos Realizados');
     //$('#socialMedia_form')[0].reset();
     $('#Modaltrabajos_realizados').modal('show');
 }
@@ -87,17 +86,14 @@ function nuevo(){
 function editar (idtrabajos_realizados){
     $.post("/thiago/controller/trabajos_realizados.php?opc=mostrar",{idtrabajos_realizados:idtrabajos_realizados},function (data){
         data = JSON.parse(data);
-        //console.log(data)
+        console.log(data)
         $('#idtrabajos_realizados').val (data.idtrabajos_realizados);
-        //$('#fil_id').val (data.fil_id);
-        //$('#work_img').val (data.work_img);
         $('#work_titulo').val (data.work_titulo);
         $('#work_descripcion').val (data.work_descripcion);
         $('#work_fecha').val (data.work_fecha);
         $('#work_rol').val (data.work_rol);
-        //$('#work_tecnologia').val (data.work_tecnologia);
     });
-    $('#titulo_modal').html('Editar');
+    $('#titulo_modal').html('Editar red');
     $('#Modaltrabajos_realizados').modal('show');
 }
 
@@ -106,7 +102,8 @@ function eliminar(idtrabajos_realizados){
         title:'Eliminar!',
         text:'Desea eliminar el Registro?',
         icon:'error',
-        ShowCancelButton:true,
+        showCancelButton:true,
+        /*ShowCancelButton:true,*/
         confirmButtonText:'Aceptar',
         cancelButtonText:'Cancelar',
     }).then((result)=>{

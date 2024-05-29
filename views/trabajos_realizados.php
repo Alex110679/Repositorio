@@ -1,7 +1,6 @@
 <?php 
 define("BASE_URL","Thiago/views/");
 require_once("../config/conexion.php");
-//require_once("../model/Usuario.php");
 if(isset($_SESSION["idusuarios"])){
 ?>
 
@@ -47,7 +46,7 @@ if(isset($_SESSION["idusuarios"])){
                 <h3 class="card-title">Trabajos Realizados</h3>
               </div>
               <div class="card-body">
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-default">Crear
+                <button type="button" class="btn btn-outline-primary" id="add_button" onclick="nuevo()">Crear
                 </button>
                 <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#modal-primary">Cargar</button>
                 <div class="col-md-6">
@@ -56,18 +55,21 @@ if(isset($_SESSION["idusuarios"])){
                   <div class="card-body p-0">
                     <table class="table display responsive wrap" id="trabajos_realizados_data">
                       <thead>
+                        
                         <tr>
-                          <!--<th>ID</th>
-                          <th>Imagen</th>-->
-                          <th>Titulo</th>
-                          <th>Descripción</th>
-                          <th>Fecha</th>
-                          <th>Rol</th>
-                          <!--<th>Tecnologia</th>-->
+                          <th class="wd-15p">Titulo</th>
+                          <th class="wd-15p">Descripción</th>
+                          <th class="wd-15p">Fecha</th>
+                          <th class="wd-15p">Rol</th>
+                          <!---<th>Icono</th>
+                          <th style="width: 40px">Enlace</th>--->
                           <th></th>
                           <th></th>
                         </tr>
                       </thead>
+                      <tbody>
+
+                      </tbody>
                     </table>
                   </div> 
                 </div> 

@@ -7,6 +7,7 @@
             <!----formulario mantenimiento-->
             <form method="post" id="social_media_form">
                 <div class="modal-body">
+                    <h4>Redes Sociales</h4>
                     <!---<input type="text" name="idsocial_media" id="idsocial_media"/>--->
                     <div class="col-lg-12">
                         <div class="form-group">

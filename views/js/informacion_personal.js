@@ -1,7 +1,7 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-    $("informacion_personal_form").on("submit",function(e){
+    $("#informacion_personal_form").on("submit",function(e){ /* se agrego la # ojo*/
         guardaryeditar(e);
     });
 }
@@ -21,16 +21,15 @@ function guardaryeditar(e){
             console.log(data);
             $('#informacion_personal_data').DataTable().ajax.reload();
             $('#Modalinformacion_personal').modal('hide');
-        
-        Swal.fire({
-        /*FileSystemWritableFileStream.fire({*/
-            title:'Correcto!',
-            text:'Se registro Correctamente',
-            icon: 'success',
-            confirmButtonText:'Aceptar'
-        })
+
+            Swal.fire({
+                title:'Correcto!',
+                text:'Se registro Correctamente',
+                icon: 'success',
+                confirmButtonText:'Aceptar'
+            })
         }
-    })
+    });
 }
 
 $(document).ready(function(){
@@ -45,7 +44,7 @@ $(document).ready(function(){
         "ajax":{
             url:"/thiago/controller/informacion_personal.php?opc=listar",
             type:"post",
-            },
+        },
         "bDestroy":true,
         "responsive":true,
         "bInfo":true,
@@ -74,29 +73,29 @@ $(document).ready(function(){
                 "sSortAscending":   ":Activar para ordenar la columna de manera ascendente",
                 "sSortDescending":   ":Activar para ordenar la columna de manera descendente",
             }
-        }
+        },
             
-    })
+    });
 });
 function nuevo(){
-    $('#titulo_modal').html('Nueva Red Social');
+    $('#titulo_modal').html('Nueva Informacion');
     //$('#socialMedia_form')[0].reset();
     $('#Modalinformacion_personal').modal('show');
 }
 
-function editar (id){
+function editar (idinformacion_personal){
     $.post("/thiago/controller/informacion_personal.php?opc=mostrar",{idinformacion_personal:idinformacion_personal},function (data){
         data = JSON.parse(data);
-        //console.log(data)
+        console.log(data)
         $('#idinformacion_personal').val (data.idinformacion_personal);
-        $('#socmed_icono').val (data.info_nacimiento);
-        $('#socmed_url').val (data.info_celular);
-        $('#socmed_icono').val (data.info_email);
-        $('#socmed_icono').val (data.info_url);
-        $('#socmed_icono').val (data.info_direccion);
-        $('#socmed_icono').val (data.info_cargo);
+        $('#info_nacimiento').val (data.info_nacimiento);
+        $('#info_celular').val (data.info_celular);
+        $('#info_email').val (data.info_email);
+        $('#info_url').val (data.info_url);
+        $('#info_direccion').val (data.info_direccion);
+        $('#info_ocupacion').val (data.info_ocupacion);
     });
-    $('#titulo_modal').html('Editar red');
+    $('#titulo_modal').html('Editar Inf.');
     $('#Modalinformacion_personal').modal('show');
 }
 
@@ -105,7 +104,8 @@ function eliminar(idinformacion_personal){
         title:'Eliminar!',
         text:'Desea eliminar el Registro?',
         icon:'error',
-        ShowCancelButton:true,
+        showCancelButton:true,
+        /*ShowCancelButton:true,*/
         confirmButtonText:'Aceptar',
         cancelButtonText:'Cancelar',
     }).then((result)=>{

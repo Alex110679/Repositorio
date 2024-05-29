@@ -1,7 +1,7 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-    $("menu_form").on("submit",function(e){
+    $("#menu_form").on("submit",function(e){ /* se agrego la # ojo*/
         guardaryeditar(e);
     });
 }
@@ -21,16 +21,15 @@ function guardaryeditar(e){
             console.log(data);
             $('#menu_data').DataTable().ajax.reload();
             $('#Modalmenu').modal('hide');
-            
-        Swal.fire({
-        /*FileSystemWritableFileStream.fire({*/
-            title:'Correcto!',
-            text:'Se registro Correctamente',
-            icon: 'success',
-            confirmButtonText:'Aceptar'
-        })
+
+            Swal.fire({
+                title:'Correcto!',
+                text:'Se registro Correctamente',
+                icon: 'success',
+                confirmButtonText:'Aceptar'
+            })
         }
-    })
+    });
 }
 
 $(document).ready(function(){
@@ -45,7 +44,7 @@ $(document).ready(function(){
         "ajax":{
             url:"/thiago/controller/menu.php?opc=listar",
             type:"post",
-            },
+        },
         "bDestroy":true,
         "responsive":true,
         "bInfo":true,
@@ -74,25 +73,25 @@ $(document).ready(function(){
                 "sSortAscending":   ":Activar para ordenar la columna de manera ascendente",
                 "sSortDescending":   ":Activar para ordenar la columna de manera descendente",
             }
-        }
+        },
             
-    })
+    });
 });
 function nuevo(){
-    $('#titulo_modal').html('Nueva Red Social');
-    //$('#socialMedia_form')[0].reset();
+    $('#titulo_modal').html('Nuevo Menu');
+    //$('#menu_form')[0].reset();
     $('#Modalmenu').modal('show');
 }
 
 function editar (idmenu){
     $.post("/thiago/controller/menu.php?opc=mostrar",{idmenu:idmenu},function (data){
         data = JSON.parse(data);
-        //console.log(data)
+        console.log(data)
         $('#idmenu').val (data.idmenu);
         $('#opcion').val (data.opcion);
         $('#url').val (data.url);
     });
-    $('#titulo_modal').html('Editar red');
+    $('#titulo_modal').html('Editar menu');
     $('#Modalmenu').modal('show');
 }
 
@@ -101,7 +100,8 @@ function eliminar(idmenu){
         title:'Eliminar!',
         text:'Desea eliminar el Registro?',
         icon:'error',
-        ShowCancelButton:true,
+        showCancelButton:true,
+        /*ShowCancelButton:true,*/
         confirmButtonText:'Aceptar',
         cancelButtonText:'Cancelar',
     }).then((result)=>{

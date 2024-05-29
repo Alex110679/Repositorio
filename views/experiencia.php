@@ -1,7 +1,6 @@
 <?php 
 define("BASE_URL","Thiago/views/");
 require_once("../config/conexion.php");
-//require_once("../model/Usuario.php");
 if(isset($_SESSION["idusuarios"])){
 ?>
 
@@ -27,14 +26,14 @@ if(isset($_SESSION["idusuarios"])){
 
     <div class="content-wrapper">
 
-        <section class="content-header">
+    <section class="content-header">
         <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
             <h1>Experiencia</h1>
             </div>
-            
-            </div>
+
+        </div>
         </div>
     </section>
 
@@ -47,26 +46,32 @@ if(isset($_SESSION["idusuarios"])){
                 <h3 class="card-title">Experiencia</h3>
                 </div>
                 <div class="card-body">
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-default">Crear
+                <button type="button" class="btn btn-outline-primary" id="add_button" onclick="nuevo()">Crear
                 </button>
                 <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#modal-primary">Cargar</button>
                 <div class="col-md-6">
 
 
-                    <div class="card-body p-0">
+                <div class="card-body p-0">
                     <table class="table display responsive wrap" id="experiencia_data">
                         <thead>
                         <tr>
-                            <th>Titulo</th>
-                            <th>Lugar</th>
-                            <th>Año Inicial</th>
-                            <th>Año Final</th>
-                            <th>Tipo</th>
+                            <th class="wd-15p">Titulo</th>
+                            <th class="wd-15p">Lugar</th>
+                            <th class="wd-15p">Año Inicial</th>
+                            <th class="wd-15p">Año Final</th>
+                            <th class="wd-15p">Tipo</th>
+                            <!---<th>Icono</th>
+                            <th style="width: 40px">Enlace</th>
+                            <th class="wd-15px">Titulo</th>--->
                             <th></th>
                             <th></th>
                         </tr>
                         </thead>
-                        </table>
+                        <tbody>
+
+                        </tbody>
+                    </table>
                     </div> 
                 </div> 
                 </div>            
@@ -78,10 +83,10 @@ if(isset($_SESSION["idusuarios"])){
     
     </div>
     
-    <!-- /.content-wrapper -->
+        <!-- /.content-wrapper -->
     <?php include("modulos/footer.php");?>
 
-    <!-- Control Sidebar -->
+        <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
     </aside>
@@ -90,7 +95,7 @@ if(isset($_SESSION["idusuarios"])){
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<?php require_once("Modalexperiencia.php");?>
+<?php require_once("ModalExperiencia.php");?>
 <?php include("modulos/js.php");?>
 <script type="text/javascript" src="js/experiencia.js"></script>
 </body>

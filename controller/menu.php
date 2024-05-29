@@ -44,10 +44,10 @@ switch($_GET["opc"]){
             $sub_array[]=$row["url"];
 
             $sub_array[]='<button type="button" onClick="editar('.$row["idmenu"].');" id="'.$row["idmenu"].'"
-            class="btn btn-outline-warning btn-icon"><div><i class="fa fa-edit"></i></div></button>';
+            class="btn btn-outline-warning btn-icon"><div><i class="bx bx-edit-alt"></i></div></button>';
             $sub_array[]='<button type="button" onClick="eliminar('.$row["idmenu"].');" id="'.$row["idmenu"].'"
-            class="btn btn-outline-danger btn-icon"><div><i class="fa fa-close"></i></div></button>';
-            $dat[]=$sub_array;            
+            class="btn btn-outline-danger btn-icon"><div><i class="bx bx-trash"></i></div></button>';
+            $data[]=$sub_array;            
         }
         $results=array(
             "sEcho"=>1,

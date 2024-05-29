@@ -116,7 +116,7 @@
                     <div class="fila">
                         <!-- datos personales-->
                         <div class="col">
-                            for
+                            
                             <h3>Datos personales</h3>
                             <ul>
                                 <li>
@@ -139,7 +139,7 @@
                                     <strong>ocupación</strong>
                                     Pensionado <span> POLICIA </span>
                                 </li>
-                                end for
+                                
                             </ul>
                         </div>
 
@@ -320,7 +320,7 @@
 
                     <div class="col derecha">
                         <h3>Policia Nacional</h3>
-                        for
+                        
                         <div class="item der">
                             <!--titulo-->
                             <h4>Patrullero</h4>
@@ -335,7 +335,7 @@
                             </div>
                             
                         </div>
-                        endfor
+                        
                         <div class="item der">
                             <h4>Subintendente</h4>
                             <span class="casa">Gaula</span>

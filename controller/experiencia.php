@@ -13,7 +13,6 @@ switch($_GET["opc"]){
                 $output["exp_annoIni"] = $row["exp_annoIni"];
                 $output["exp_annoFin"] = $row["exp_annoFin"];
                 $output["exp_tipo"] = $row["exp_tipo"];
-                
             }
             echo json_encode($output);
         }
@@ -27,7 +26,6 @@ switch($_GET["opc"]){
             $_POST["exp_annoIni"],
             $_POST["exp_annoFin"],
             $_POST["exp_tipo"]
-            
         );
         break;
 
@@ -48,17 +46,16 @@ switch($_GET["opc"]){
         $data=Array();
         foreach($datos as $row){
             $sub_array=array();
-            $sub_array[]=$row["exp_titulo"];
-            $sub_array[]=$row["exp_lugar"];
-            $sub_array[]=$row["exp_annoIni"];
-            $sub_array[]=$row["exp_annoFin"];
-            $sub_array[]=$row["exp_tipo"];
+            $sub_array[]=$row["work_titulo"];
+            $sub_array[]=$row["work_descripcion"];
+            $sub_array[]=$row["work_fecha"];
+            $sub_array[]=$row["work_rol"];
 
             $sub_array[]='<button type="button" onClick="editar('.$row["idexperiencia"].');" id="'.$row["idexperiencia"].'"
-            class="btn btn-outline-warning btn-icon"><div><i class="fa fa-edit"></i></div></button>';
+            class="btn btn-outline-warning btn-icon"><div><i class="bx bx-edit-alt"></i></div></button>';
             $sub_array[]='<button type="button" onClick="eliminar('.$row["idexperiencia"].');" id="'.$row["idexperiencia"].'"
-            class="btn btn-outline-danger btn-icon"><div><i class="fa fa-close"></i></div></button>';
-            $dat[]=$sub_array;            
+            class="btn btn-outline-danger btn-icon"><div><i class="bx bx-trash"></i></div></button>';
+            $data[]=$sub_array;            
         }
         $results=array(
             "sEcho"=>1,

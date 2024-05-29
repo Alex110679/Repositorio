@@ -13,7 +13,7 @@ switch($_GET["opc"]){
                 $output["info_email"] = $row["info_email"];
                 $output["info_url"] = $row["info_url"];
                 $output["info_direccion"] = $row["info_direccion"];
-                $output["info_cargo"] = $row["info_cargo"];
+                $output["info_ocupacion"] = $row["info_ocupacion"];
             }
             echo json_encode($output);
         }
@@ -27,15 +27,15 @@ switch($_GET["opc"]){
             $_POST["info_email"],
             $_POST["info_url"],
             $_POST["info_direccion"],
-            $_POST["info_cargo"]
+            $_POST["info_ocupacion"]
         );
         break;
 
     case"guardaryeditar":
         if(empty($_POST["idinformacion_personal"])){
-            $informacion_personal->insert_informacion_personal($_POST["info_nacimiento"],$_POST["info_celular"],$_POST["info_email"],$_POST["info_url"],$_POST["info_direccion"],$_POST["info_cargo"]);
+            $informacion_personal->insert_informacion_personal($_POST["info_nacimiento"],$_POST["info_celular"],$_POST["info_email"],$_POST["info_url"],$_POST["info_direccion"],$_POST["info_ocupacion"]);
         }else{
-            $informacion_personal->update_informacion_personal($_POST["idinformacion_personal"],$_POST["info_nacimiento"],$_POST["info_celular"],$_POST["info_email"],$_POST["info_url"],$_POST["info_direccion"],$_POST["info_cargo"]);
+            $informacion_personal->update_informacion_personal($_POST["idinformacion_personal"],$_POST["info_nacimiento"],$_POST["info_celular"],$_POST["info_email"],$_POST["info_url"],$_POST["info_direccion"],$_POST["info_ocupacion"]);
         }
         break;
 
@@ -53,14 +53,13 @@ switch($_GET["opc"]){
             $sub_array[]=$row["info_email"];
             $sub_array[]=$row["info_url"];
             $sub_array[]=$row["info_direccion"];
-            $sub_array[]=$row["info_cargo"];
-            
+            $sub_array[]=$row["info_ocupacion"];
 
             $sub_array[]='<button type="button" onClick="editar('.$row["idinformacion_personal"].');" id="'.$row["idinformacion_personal"].'"
-            class="btn btn-outline-warning btn-icon"><div><i class="fa fa-edit"></i></div></button>';
+            class="btn btn-outline-warning btn-icon"><div><i class="bx bx-edit-alt"></i></div></button>';
             $sub_array[]='<button type="button" onClick="eliminar('.$row["idinformacion_personal"].');" id="'.$row["idinformacion_personal"].'"
-            class="btn btn-outline-danger btn-icon"><div><i class="fa fa-close"></i></div></button>';
-            $dat[]=$sub_array;            
+            class="btn btn-outline-danger btn-icon"><div><i class="bx bx-trash"></i></div></button>';
+            $data[]=$sub_array;            
         }
         $results=array(
             "sEcho"=>1,

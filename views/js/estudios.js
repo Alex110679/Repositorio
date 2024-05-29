@@ -1,7 +1,7 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-    $("estudios_form").on("submit",function(e){
+    $("#estudios_form").on("submit",function(e){ /* se agrego la # ojo*/
         guardaryeditar(e);
     });
 }
@@ -22,15 +22,14 @@ function guardaryeditar(e){
             $('#estudios_data').DataTable().ajax.reload();
             $('#Modalestudios').modal('hide');
 
-        /*FileSystemWritableFileStream.fire({*/
-        Swal.fire({
-            title:'Correcto!',
-            text:'Se registro Correctamente',
-            icon: 'success',
-            confirmButtonText:'Aceptar'
-        })
+            Swal.fire({
+                title:'Correcto!',
+                text:'Se registro Correctamente',
+                icon: 'success',
+                confirmButtonText:'Aceptar'
+            })
         }
-    })
+    });
 }
 
 $(document).ready(function(){
@@ -45,7 +44,7 @@ $(document).ready(function(){
         "ajax":{
             url:"/thiago/controller/estudios.php?opc=listar",
             type:"post",
-            },
+        },
         "bDestroy":true,
         "responsive":true,
         "bInfo":true,
@@ -74,12 +73,12 @@ $(document).ready(function(){
                 "sSortAscending":   ":Activar para ordenar la columna de manera ascendente",
                 "sSortDescending":   ":Activar para ordenar la columna de manera descendente",
             }
-        }
+        },
             
-    })
+    });
 });
 function nuevo(){
-    $('#titulo_modal').html('Nueva Red Social');
+    $('#titulo_modal').html('Estudios');
     //$('#socialMedia_form')[0].reset();
     $('#Modalestudios').modal('show');
 }
@@ -87,14 +86,14 @@ function nuevo(){
 function editar (idestudios){
     $.post("/thiago/controller/estudios.php?opc=mostrar",{idestudios:idestudios},function (data){
         data = JSON.parse(data);
-        //console.log(data)
+        console.log(data)
         $('#idestudios').val (data.idestudios);
         $('#est_titulo').val (data.est_titulo);
         $('#est_lugar').val (data.est_lugar);
         $('#est_anno').val (data.est_anno);
         $('#est_tipo').val (data.est_tipo);
     });
-    $('#titulo_modal').html('Editar red');
+    $('#titulo_modal').html('Estudios');
     $('#Modalestudios').modal('show');
 }
 
@@ -103,7 +102,8 @@ function eliminar(idestudios){
         title:'Eliminar!',
         text:'Desea eliminar el Registro?',
         icon:'error',
-        ShowCancelButton:true,
+        showCancelButton:true,
+        /*ShowCancelButton:true,*/
         confirmButtonText:'Aceptar',
         cancelButtonText:'Cancelar',
     }).then((result)=>{

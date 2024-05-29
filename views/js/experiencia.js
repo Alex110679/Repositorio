@@ -1,7 +1,7 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-    $("experiencia_form").on("submit",function(e){
+    $("#experiencia_form").on("submit",function(e){ /* se agrego la # ojo*/
         guardaryeditar(e);
     });
 }
@@ -21,15 +21,15 @@ function guardaryeditar(e){
             console.log(data);
             $('#experiencia_data').DataTable().ajax.reload();
             $('#Modalexperiencia').modal('hide');
-        Swal.fire({
-        /*FileSystemWritableFileStream.fire({*/
-            title:'Correcto!',
-            text:'Se registro Correctamente',
-            icon: 'success',
-            confirmButtonText:'Aceptar'
-        })
+
+            Swal.fire({
+                title:'Correcto!',
+                text:'Se registro Correctamente',
+                icon: 'success',
+                confirmButtonText:'Aceptar'
+            })
         }
-    })
+    });
 }
 
 $(document).ready(function(){
@@ -44,7 +44,7 @@ $(document).ready(function(){
         "ajax":{
             url:"/thiago/controller/experiencia.php?opc=listar",
             type:"post",
-            },
+        },
         "bDestroy":true,
         "responsive":true,
         "bInfo":true,
@@ -73,12 +73,12 @@ $(document).ready(function(){
                 "sSortAscending":   ":Activar para ordenar la columna de manera ascendente",
                 "sSortDescending":   ":Activar para ordenar la columna de manera descendente",
             }
-        }
+        },
             
-    })
+    });
 });
 function nuevo(){
-    $('#titulo_modal').html('Nueva Red Social');
+    $('#titulo_modal').html('Experiencia');
     //$('#socialMedia_form')[0].reset();
     $('#Modalexperiencia').modal('show');
 }
@@ -86,7 +86,7 @@ function nuevo(){
 function editar (idexperiencia){
     $.post("/thiago/controller/experiencia.php?opc=mostrar",{idexperiencia:idexperiencia},function (data){
         data = JSON.parse(data);
-        //console.log(data)
+        console.log(data)
         $('#idexperiencia').val (data.idexperiencia);
         $('#exp_titulo').val (data.exp_titulo);
         $('#exp_lugar').val (data.exp_lugar);
@@ -103,7 +103,8 @@ function eliminar(idexperiencia){
         title:'Eliminar!',
         text:'Desea eliminar el Registro?',
         icon:'error',
-        ShowCancelButton:true,
+        showCancelButton:true,
+        /*ShowCancelButton:true,*/
         confirmButtonText:'Aceptar',
         cancelButtonText:'Cancelar',
     }).then((result)=>{

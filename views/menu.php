@@ -1,7 +1,6 @@
 <?php 
 define("BASE_URL","Thiago/views/");
 require_once("../config/conexion.php");
-//require_once("../model/Usuario.php");
 if(isset($_SESSION["idusuarios"])){
 ?>
 
@@ -30,10 +29,10 @@ if(isset($_SESSION["idusuarios"])){
     <section class="content-header">
         <div class="container-fluid">
         <div class="row mb-2">
-            <div class="col-sm-6">
+        <div class="col-sm-6">
             <h1>Menu</h1>
-            </div>
-            
+        </div>
+        
         </div>
         </div>
     </section>
@@ -41,48 +40,53 @@ if(isset($_SESSION["idusuarios"])){
     <section class="content">
         <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+        <div class="col-md-12">
             <div class="card card-primary card-outline">
                 <div class="card-header">
                 <h3 class="card-title">Menu</h3>
-                </div>
-                <div class="card-body">
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-default">Crear
+            </div>
+            <div class="card-body">
+                <button type="button" class="btn btn-outline-primary" id="add_button" onclick="nuevo()">Crear
                 </button>
                 <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#modal-primary">Cargar</button>
                 <div class="col-md-6">
 
 
-                    <div class="card-body p-0">
+                <div class="card-body p-0">
                     <table class="table display responsive wrap" id="menu_data">
-                        <thead>
+                    <thead>
                         <tr>
-                            <th>Opción</th>
-                            <th style="width: 40px">Enlace</th>
-                            <th></th>
-                            <th></th>
+                        <th class="wd-15p">Opcion</th>
+                        <th class="wd-15p">Enlace</th>
+                        <!---<th>Icono</th>
+                        <th style="width: 40px">Enlace</th>--->
+                        <th></th>
+                        <th></th>
                         </tr>
-                        </thead>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
                     </table>
-                    </div> 
                 </div> 
-                </div>            
-            </div>
+                </div> 
+            </div>            
             </div>
         </div>
         </div>
+    </div>
     </section>
     
-    </div>
-    
-    <!-- /.content-wrapper -->
-    <?php include("modulos/footer.php");?>
+</div>
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+<!-- /.content-wrapper -->
+<?php include("modulos/footer.php");?>
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+<!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 
@@ -95,6 +99,6 @@ if(isset($_SESSION["idusuarios"])){
 
 <?php 
 }else{
-    header("Location:".Conectar::ruta()."views/404.php");
+header("Location:".Conectar::ruta()."views/404.php");
 }
 ?>
