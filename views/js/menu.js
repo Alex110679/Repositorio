@@ -1,9 +1,9 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-    $("#menu_form").on("submit",function(e){ /* se agrego la # ojo*/
+   /* $("#menu_form").on("submit",function(e){ 
         guardaryeditar(e);
-    });
+    });*/
 }
 
 function guardaryeditar(e){
@@ -11,7 +11,7 @@ function guardaryeditar(e){
     var formData= new FormData($("#menu_form")[0]);
     
     $.ajax({
-        url:"/Thiago/controller/menu.php?opc=guardaryeditar",
+        url:"/thiago/controller/menu.php?opc=guardaryeditar",
         type:"POST",
         data:formData,
         contentType:false,
@@ -43,7 +43,7 @@ $(document).ready(function(){
         ],
         "ajax":{
             url:"/thiago/controller/menu.php?opc=listar",
-            type:"post",
+            type:"post"
         },
         "bDestroy":true,
         "responsive":true,
@@ -83,13 +83,13 @@ function nuevo(){
     $('#Modalmenu').modal('show');
 }
 
-function editar (idmenu){
+function editar(idmenu){
     $.post("/thiago/controller/menu.php?opc=mostrar",{idmenu:idmenu},function (data){
         data = JSON.parse(data);
-        console.log(data)
+        
         $('#idmenu').val (data.idmenu);
-        $('#opcion').val (data.opcion);
-        $('#url').val (data.url);
+        $('#menu_opcion').val (data.menu_opcion);
+        $('#menu_url').val (data.menu_url);
     });
     $('#titulo_modal').html('Editar menu');
     $('#Modalmenu').modal('show');

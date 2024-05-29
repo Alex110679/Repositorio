@@ -1,14 +1,14 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-    $("#social_media_form").on("submit",function(e){ /* se agrego la # ojo*/
+    $("#socialMedia_form").on("submit",function(e){ /* se cambio social_media ojo*/
         guardaryeditar(e);
     });
 }
 
 function guardaryeditar(e){
     e.preventDefault();
-    var formData= new FormData($("#social_media_form")[0]);
+    var formData = new FormData($("#socialMedia_form")[0]);/* se cambio social_media ojo*/
     
     $.ajax({
         url:"/Thiago/controller/social_media.php?opc=guardaryeditar",
@@ -33,6 +33,7 @@ function guardaryeditar(e){
 }
 
 $(document).ready(function(){
+    
     $('#socialMedia_data').DataTable({
         "aProcessing":true,
         "aServerSide":true,

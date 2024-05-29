@@ -58,8 +58,6 @@ if(isset($_SESSION["idusuarios"])){
                         <tr>
                         <th class="wd-15p">Opcion</th>
                         <th class="wd-15p">Enlace</th>
-                        <!---<th>Icono</th>
-                        <th style="width: 40px">Enlace</th>--->
                         <th></th>
                         <th></th>
                         </tr>
@@ -92,7 +90,7 @@ if(isset($_SESSION["idusuarios"])){
 
 <!-- jQuery -->
 <?php require_once("Modalmenu.php");?>
-<?php include("modulos/js.php");?>
+<?php require_once("modulos/js.php");?>
 <script type="text/javascript" src="js/menu.js"></script>
 </body>
 </html>

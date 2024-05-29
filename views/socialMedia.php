@@ -92,7 +92,7 @@ if(isset($_SESSION["idusuarios"])){
 
 <!-- jQuery -->
 <?php require_once("Modalsocialmedia.php");?>
-<?php include("modulos/js.php");?>
+<?php require_once("modulos/js.php");?>   <!---include se cambio por require_once--->
 <script type="text/javascript" src="js/socialMedia.js"></script>
 </body>
 </html>

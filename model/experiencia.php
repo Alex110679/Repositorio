@@ -38,9 +38,9 @@ class Experiencia extends Conectar{
     public function update_experiencia($idexperiencia,$exp_titulo,$exp_lugar,$exp_annoIni,$exp_annoFin,$exp_tipo){
         $exp=parent::conexion();
         parent::set_names();
-        $sql="UPDATE experiencia 
+        $sql="UPDATE experiencia
             SET 
-            exp_titulo=?,
+                exp_titulo=?,
                 exp_lugar=?,
                 exp_annoIni=?,
                 exp_annoFin=?,
@@ -59,7 +59,7 @@ class Experiencia extends Conectar{
         return $resultado=$sql->fetchAll();
     }
 
-    public function delete_expMedia($idexperiencia){
+    public function delete_experiencia($idexperiencia){
         $exp=parent::conexion();
         parent::set_names();
         $sql="UPDATE experiencia SET est=0 WHERE idexperiencia=?";

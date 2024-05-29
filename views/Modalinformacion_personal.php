@@ -1,7 +1,7 @@
 <div id="Modalinformacion_personal" class="modal fade" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content bd-0">
-            <div class="modal-header pd-y-20 pd-xx25">
+            <div class="modal-header pd-y-20 pd-x-25">
                 <h6 id="lbltitulo" class="tx-14 mg-b-0 tx-uppercase tx-inverser tx-bold"></h6>
             </div>
             <!----formulario mantenimiento-->
@@ -29,12 +29,6 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <label class="form-control-label">URL:<span class="tx-danger">*</span></label>
-                            <input class="form-control" id="info_url" type="text" name="info_url"required/>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="form-group">
                             <label class="form-control-label">Direccion:<span class="tx-danger">*</span></label>
                             <input class="form-control" id="info_direccion" type="text" name="info_direccion"required/>
                         </div>
@@ -42,7 +36,7 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label">Ocupacion:<span class="tx-danger">*</span></label>
-                            <input class="form-control" id="info_cargo" type="text" name="info_cargo"required/>
+                            <input class="form-control" id="info_ocupacion" type="text" name="info_ocupacion"required/>
                         </div>
                     </div>
                 </div>

@@ -8,8 +8,9 @@ switch($_GET["opc"]){
         $datos =$menu->get_menuXid($_POST["idmenu"]);
         if(is_array($datos)==true and count($datos)<>0){
             foreach($datos as $row){
-                $output["opcion"] = $row["opcion"];
-                $output["url"] = $row["url"];
+                $output["idmenu"] = $row["idmenu"];
+                $output["menu_opcion"] = $row["menu_opcion"];
+                $output["menu_url"] = $row["menu_url"];
             }
             echo json_encode($output);
         }
@@ -18,16 +19,16 @@ switch($_GET["opc"]){
     case"modificar":
         $menu->update_menu(
             $_POST["idmenu"],
-            $_POST["opcion"],
-            $_POST["url"],
+            $_POST["menu_opcion"],
+            $_POST["menu_url"]
         );
         break;
 
     case"guardaryeditar":
         if(empty($_POST["idmenu"])){
-            $menu->insert_menu($_POST["opcion"],$_POST["url"]);
+            $menu->insert_menu($_POST["menu_opcion"],$_POST["menu_url"]);
         }else{
-            $menu->update_menu($_POST["idmenu"],$_POST["opcion"],$_POST["url"]);
+            $menu->update_menu($_POST["idmenu"],$_POST["menu_opcion"],$_POST["menu_url"]);
         }
         break;
 
@@ -40,8 +41,8 @@ switch($_GET["opc"]){
         $data=Array();
         foreach($datos as $row){
             $sub_array=array();
-            $sub_array[]=$row["opcion"];
-            $sub_array[]=$row["url"];
+            $sub_array[]=$row["menu_opcion"];
+            $sub_array[]=$row["menu_url"];
 
             $sub_array[]='<button type="button" onClick="editar('.$row["idmenu"].');" id="'.$row["idmenu"].'"
             class="btn btn-outline-warning btn-icon"><div><i class="bx bx-edit-alt"></i></div></button>';

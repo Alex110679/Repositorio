@@ -59,7 +59,6 @@ if(isset($_SESSION["idusuarios"])){
                         <th class="wd-15p">F/Nacimiento</th>
                         <th class="wd-15p">celular</th>
                         <th class="wd-15p">Email</th>
-                        <th class="wd-15p">Enlace</th>
                         <th class="wd-15p">direccion</th>
                         <th class="wd-15p">ocupacion</th>
                         <!---<th>Icono</th>
@@ -96,7 +95,7 @@ if(isset($_SESSION["idusuarios"])){
 
 <!-- jQuery -->
 <?php require_once("Modalinformacion_personal.php");?>
-<?php include("modulos/js.php");?>
+<?php require_once("modulos/js.php");?>
 <script type="text/javascript" src="js/informacion_personal.js"></script>
 </body>
 </html>

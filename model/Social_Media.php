@@ -1,12 +1,13 @@
 <?php 
-class SocialMedia extends Conectar{
-    public function get_socialMedia(){
-        $social=parent::conexion();
-        parent::set_names();
-        $sql="SELECT * FROM social_media WHERE est=1";
-        $sql=$social->prepare($sql);
-        $sql->execute();
-        return $resultado=$sql->fetchAll();
+    class SocialMedia extends Conectar{
+
+        public function get_socialMedia(){
+            $social=parent::conexion();
+            parent::set_names();
+            $sql="SELECT * FROM social_media WHERE est=1";
+            $sql=$social->prepare($sql);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
     }
     
     public function get_socialMediaXid($idsocial_media){
@@ -33,7 +34,7 @@ class SocialMedia extends Conectar{
     }
 
     public function update_socialMedia($idsocial_media,$socmed_icono,$socmed_url){
-        $social=parent::conexion();
+        $social = parent::conexion();
         parent::set_names();
         $sql="UPDATE social_media 
             SET 

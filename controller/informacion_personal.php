@@ -11,7 +11,6 @@ switch($_GET["opc"]){
                 $output["info_nacimiento"] = $row["info_nacimiento"];
                 $output["info_celular"] = $row["info_celular"];
                 $output["info_email"] = $row["info_email"];
-                $output["info_url"] = $row["info_url"];
                 $output["info_direccion"] = $row["info_direccion"];
                 $output["info_ocupacion"] = $row["info_ocupacion"];
             }
@@ -25,7 +24,6 @@ switch($_GET["opc"]){
             $_POST["info_nacimiento"],
             $_POST["info_celular"],
             $_POST["info_email"],
-            $_POST["info_url"],
             $_POST["info_direccion"],
             $_POST["info_ocupacion"]
         );
@@ -33,9 +31,9 @@ switch($_GET["opc"]){
 
     case"guardaryeditar":
         if(empty($_POST["idinformacion_personal"])){
-            $informacion_personal->insert_informacion_personal($_POST["info_nacimiento"],$_POST["info_celular"],$_POST["info_email"],$_POST["info_url"],$_POST["info_direccion"],$_POST["info_ocupacion"]);
+            $informacion_personal->insert_informacion_personal($_POST["info_nacimiento"],$_POST["info_celular"],$_POST["info_email"],$_POST["info_direccion"],$_POST["info_ocupacion"]);
         }else{
-            $informacion_personal->update_informacion_personal($_POST["idinformacion_personal"],$_POST["info_nacimiento"],$_POST["info_celular"],$_POST["info_email"],$_POST["info_url"],$_POST["info_direccion"],$_POST["info_ocupacion"]);
+            $informacion_personal->update_informacion_personal($_POST["idinformacion_personal"],$_POST["info_nacimiento"],$_POST["info_celular"],$_POST["info_email"],$_POST["info_direccion"],$_POST["info_ocupacion"]);
         }
         break;
 
@@ -51,7 +49,6 @@ switch($_GET["opc"]){
             $sub_array[]=$row["info_nacimiento"];
             $sub_array[]=$row["info_celular"];
             $sub_array[]=$row["info_email"];
-            $sub_array[]=$row["info_url"];
             $sub_array[]=$row["info_direccion"];
             $sub_array[]=$row["info_ocupacion"];
 

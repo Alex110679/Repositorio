@@ -37,19 +37,20 @@ switch($_GET["opc"]){
         }
         break;
 
-    case"eliminar":
-        $experiencia->delete_experiencia($_POST["idexperiencia"]);
-        break;
+        case"eliminar":
+            $experiencia->delete_experiencia($_POST["idexperiencia"]);
+            break;
 
     case"listar":
         $datos=$experiencia->get_experiencia();
         $data=Array();
         foreach($datos as $row){
             $sub_array=array();
-            $sub_array[]=$row["work_titulo"];
-            $sub_array[]=$row["work_descripcion"];
-            $sub_array[]=$row["work_fecha"];
-            $sub_array[]=$row["work_rol"];
+            $sub_array[]=$row["exp_titulo"];
+            $sub_array[]=$row["exp_lugar"];
+            $sub_array[]=$row["exp_annoIni"];
+            $sub_array[]=$row["exp_annoFin"];
+            $sub_array[]=$row["exp_tipo"];
 
             $sub_array[]='<button type="button" onClick="editar('.$row["idexperiencia"].');" id="'.$row["idexperiencia"].'"
             class="btn btn-outline-warning btn-icon"><div><i class="bx bx-edit-alt"></i></div></button>';

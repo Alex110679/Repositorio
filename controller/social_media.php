@@ -1,11 +1,12 @@
 <?php 
-require_once("../config/conexion.php");
-require_once("../model/Social_Media.php");
-$social_media=new SocialMedia();
-switch($_GET["opc"]){
+    require_once("../config/conexion.php");
+    require_once("../model/Social_Media.php");
+    $social_media=new SocialMedia();
+    
+    switch($_GET["opc"]){
     
     case"mostrar":
-        $datos =$social_media->get_socialMediaXid($_POST["idsocial_media"]);
+        $datos = $social_media->get_socialMediaXid($_POST["idsocial_media"]);
         if(is_array($datos)==true and count($datos)<>0){
             foreach($datos as $row){
                 $output["socmed_icono"] = $row["socmed_icono"];
@@ -47,9 +48,9 @@ switch($_GET["opc"]){
             class="btn btn-outline-warning btn-icon"><div><i class="bx bx-edit-alt"></i></div></button>';
             $sub_array[]='<button type="button" onClick="eliminar('.$row["idsocial_media"].');" id="'.$row["idsocial_media"].'"
             class="btn btn-outline-danger btn-icon"><div><i class="bx bx-trash"></i></div></button>';
-            $data[]=$sub_array;            
+            $data[] = $sub_array;            
         }
-        $results=array(
+        $results = array(
             "sEcho"=>1,
             "iTotalRecords"=>count($data),
             "iTotalDisplayRecords"=>count($data),

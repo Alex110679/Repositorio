@@ -21,30 +21,24 @@ class Menu extends Conectar{
     }
     
 
-    public function insert_menu($opcion,$url){
+    public function insert_menu($menu_opcion,$menu_url){
         $menu=parent::conexion();
         parent::set_names();
-        $sql="INSERT INTO menu (idmenu,opcion,url,est) VALUES(NULL,?,?,1)";
+        $sql="INSERT INTO menu (idmenu,menu_opcion,menu_url,est) VALUES(NULL,?,?,1)";
         $sql=$menu->prepare($sql);
-        $sql->bindValue(1,$opcion);
-        $sql->bindValue(2,$url);
+        $sql->bindValue(1,$menu_opcion);
+        $sql->bindValue(2,$menu_url);
         $sql->execute();
         return $resultado=$sql->fetchAll();
     }
 
-    public function update_menu($idmenu,$opcion,$url){
+    public function update_menu($idmenu,$menu_opcion,$menu_url){
         $menu=parent::conexion();
         parent::set_names();
-        $sql="UPDATE menu 
-            SET 
-            opcion=?,
-            url=?
-            WHERE 
-                idmenu=?";       
-        
+        $sql="UPDATE menu SET menu_opcion=?,menu_url=? WHERE idmenu=?";
         $sql=$menu->prepare($sql);
-        $sql->bindValue(1,$opcion);
-        $sql->bindValue(2,$url);
+        $sql->bindValue(1,$menu_opcion);
+        $sql->bindValue(2,$menu_url);
         $sql->bindValue(3,$idmenu);
         $sql->execute();
         return $resultado=$sql->fetchAll();

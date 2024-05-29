@@ -91,11 +91,10 @@ function editar (idinformacion_personal){
         $('#info_nacimiento').val (data.info_nacimiento);
         $('#info_celular').val (data.info_celular);
         $('#info_email').val (data.info_email);
-        $('#info_url').val (data.info_url);
         $('#info_direccion').val (data.info_direccion);
         $('#info_ocupacion').val (data.info_ocupacion);
     });
-    $('#titulo_modal').html('Editar Inf.');
+    $('#titulo_modal').html('Editar Informacion');
     $('#Modalinformacion_personal').modal('show');
 }
 

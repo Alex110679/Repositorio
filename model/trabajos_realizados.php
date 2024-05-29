@@ -37,7 +37,7 @@ class Trabajos_realizados extends Conectar{
     public function update_trabajos_realizados($idtrabajos_realizados,$work_titulo,$work_descripcion,$work_fecha,$work_rol){
         $work=parent::conexion();
         parent::set_names();
-        $sql="UPDATE trabajos_realizados 
+        $sql="UPDATE trabajos_realizados
             SET 
             work_titulo=?,
             work_descripcion=?,
