@@ -1,12 +1,13 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-   /* $("#menu_form").on("submit",function(e){ 
+    /* $("#menu_form").on("submit",function(e){ 
         guardaryeditar(e);
     });*/
 }
 
 function guardaryeditar(e){
+    /*console.log("Entrar a la función");*/
     e.preventDefault();
     var formData= new FormData($("#menu_form")[0]);
     
@@ -30,6 +31,8 @@ function guardaryeditar(e){
             })
         }
     });
+    /*console.log(formData);
+    console.log($.ajax);*/
 }
 
 $(document).ready(function(){

@@ -1,9 +1,9 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-    $("#socialMedia_form").on("submit",function(e){ /* se cambio social_media ojo*/
+    /*$("#socialMedia_form").on("submit",function(e){ 
         guardaryeditar(e);
-    });
+    });*/
 }
 
 function guardaryeditar(e){
@@ -11,7 +11,7 @@ function guardaryeditar(e){
     var formData = new FormData($("#socialMedia_form")[0]);/* se cambio social_media ojo*/
     
     $.ajax({
-        url:"/Thiago/controller/social_media.php?opc=guardaryeditar",
+        url:"/thiago/controller/social_media.php?opc=guardaryeditar",
         type:"POST",
         data:formData,
         contentType:false,

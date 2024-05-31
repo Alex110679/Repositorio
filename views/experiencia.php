@@ -96,7 +96,7 @@ if(isset($_SESSION["idusuarios"])){
 
 <!-- jQuery -->
 <?php require_once("ModalExperiencia.php");?>
-<?php include("modulos/js.php");?>
+<?php require_once("modulos/js.php");?>
 <script type="text/javascript" src="js/experiencia.js"></script>
 </body>
 </html>

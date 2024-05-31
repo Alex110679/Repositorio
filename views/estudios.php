@@ -94,7 +94,7 @@ if(isset($_SESSION["idusuarios"])){
 
 <!-- jQuery -->
 <?php require_once("Modalestudios.php");?>
-<?php include("modulos/js.php");?>
+<?php require_once("modulos/js.php");?>
 <script type="text/javascript" src="js/estudios.js"></script>
 </body>
 </html>

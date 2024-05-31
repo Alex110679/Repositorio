@@ -1,9 +1,9 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-    $("#estudios_form").on("submit",function(e){ /* se agrego la # ojo*/
+    /*$("#estudios_form").on("submit",function(e){
         guardaryeditar(e);
-    });
+    });*/
 }
 
 function guardaryeditar(e){
@@ -86,7 +86,7 @@ function nuevo(){
 function editar (idestudios){
     $.post("/thiago/controller/estudios.php?opc=mostrar",{idestudios:idestudios},function (data){
         data = JSON.parse(data);
-        console.log(data)
+        
         $('#idestudios').val (data.idestudios);
         $('#est_titulo').val (data.est_titulo);
         $('#est_lugar').val (data.est_lugar);

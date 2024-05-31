@@ -1,9 +1,9 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-    $("#trabajos_realizados_form").on("submit",function(e){ /* se agrego la # ojo*/
+    /*$("#trabajos_realizados_form").on("submit",function(e){ 
         guardaryeditar(e);
-    });
+    });*/
 }
 
 function guardaryeditar(e){
@@ -11,7 +11,7 @@ function guardaryeditar(e){
     var formData= new FormData($("#trabajos_realizados_form")[0]);
     
     $.ajax({
-        url:"/Thiago/controller/trabajos_realizados.php?opc=guardaryeditar",
+        url:"/thiago/controller/trabajos_realizados.php?opc=guardaryeditar",
         type:"POST",
         data:formData,
         contentType:false,
@@ -86,7 +86,7 @@ function nuevo(){
 function editar (idtrabajos_realizados){
     $.post("/thiago/controller/trabajos_realizados.php?opc=mostrar",{idtrabajos_realizados:idtrabajos_realizados},function (data){
         data = JSON.parse(data);
-        console.log(data)
+        
         $('#idtrabajos_realizados').val (data.idtrabajos_realizados);
         $('#work_titulo').val (data.work_titulo);
         $('#work_descripcion').val (data.work_descripcion);

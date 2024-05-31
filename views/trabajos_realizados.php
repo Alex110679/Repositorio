@@ -95,7 +95,7 @@ if(isset($_SESSION["idusuarios"])){
 
 <!-- jQuery -->
 <?php require_once("Modaltrabajos_realizados.php");?>
-<?php include("modulos/js.php");?>
+<?php require_once("modulos/js.php");?>
 <script type="text/javascript" src="js/trabajos_realizados.js"></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-    $("#experiencia_form").on("submit",function(e){ /* se agrego la # ojo*/
+    /*$("#experiencia_form").on("submit",function(e){ 
         guardaryeditar(e);
-    });
+    });*/
 }
 
 function guardaryeditar(e){
@@ -86,7 +86,7 @@ function nuevo(){
 function editar (idexperiencia){
     $.post("/thiago/controller/experiencia.php?opc=mostrar",{idexperiencia:idexperiencia},function (data){
         data = JSON.parse(data);
-        console.log(data)
+        
         $('#idexperiencia').val (data.idexperiencia);
         $('#exp_titulo').val (data.exp_titulo);
         $('#exp_lugar').val (data.exp_lugar);

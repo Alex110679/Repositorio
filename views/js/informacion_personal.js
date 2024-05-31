@@ -1,17 +1,18 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-    $("#informacion_personal_form").on("submit",function(e){ /* se agrego la # ojo*/
+    /*$("#informacion_personal_form").on("submit",function(e){ 
         guardaryeditar(e);
-    });
+    });*/
 }
 
 function guardaryeditar(e){
+
     e.preventDefault();
     var formData= new FormData($("#informacion_personal_form")[0]);
     
     $.ajax({
-        url:"/Thiago/controller/informacion_personal.php?opc=guardaryeditar",
+        url:"/thiago/controller/informacion_personal.php?opc=guardaryeditar",
         type:"POST",
         data:formData,
         contentType:false,
@@ -86,7 +87,7 @@ function nuevo(){
 function editar (idinformacion_personal){
     $.post("/thiago/controller/informacion_personal.php?opc=mostrar",{idinformacion_personal:idinformacion_personal},function (data){
         data = JSON.parse(data);
-        console.log(data)
+        
         $('#idinformacion_personal').val (data.idinformacion_personal);
         $('#info_nacimiento').val (data.info_nacimiento);
         $('#info_celular').val (data.info_celular);

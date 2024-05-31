@@ -97,6 +97,6 @@ if(isset($_SESSION["idusuarios"])){
 
 <?php 
 }else{
-header("Location:".Conectar::ruta()."views/404.php");
+    header("Location:".Conectar::ruta()."views/404.php");
 }
 ?>

@@ -49,7 +49,7 @@
                 <?php 
                 for($i=0;$i<sizeof($x);$i++):
                 ?>
-                    <li><a href="#<?php echo $x[$i]["url"] ?>" onclick="seleccionar()"><?php echo $x[$i]["opcion"] ?></a></li>
+                    <li><a href="#<?php echo $x[$i]["menu_url"] ?>" onclick="seleccionar()"><?php echo $x[$i]["menu_opcion"] ?></a></li>
                     <!--MENU
                     <li><a href="#sobremi" onclick="seleccionar()">SOBRE_MI</a></li>
                     <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
